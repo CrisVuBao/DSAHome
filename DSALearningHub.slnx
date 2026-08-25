@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DSALearningHub.Core/DSALearningHub.Core.csproj" />
+  <Project Path="DSALearningHub.Infrastructure/DSALearningHub.Infrastructure.csproj" />
+  <Project Path="DSALearningHub.TelegramBot/DSALearningHub.TelegramBot.csproj" />
+  <Project Path="DSALearningHub.WebApi/DSALearningHub.WebApi.csproj" />
+</Solution>
