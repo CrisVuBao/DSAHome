@@ -48,7 +48,7 @@ export default function Dashboard() {
       initial="hidden"
       animate="show"
       variants={container}
-      className="p-10 w-full max-w-6xl mx-auto h-full overflow-y-auto"
+      className="p-4 md:p-10 w-full max-w-6xl mx-auto h-full overflow-y-auto"
     >
       <motion.div variants={item} className="flex justify-between items-end mb-10">
         <div>

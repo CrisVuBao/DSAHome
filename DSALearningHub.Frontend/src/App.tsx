@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Sidebar from './components/Sidebar';
+import MobileNav from './components/MobileNav';
 import Dashboard from './pages/Dashboard';
 import Learn from './pages/Learn';
 import TopicLesson from './pages/TopicLesson';
@@ -31,11 +32,22 @@ function App() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
       
-      <div className="flex h-screen w-full font-sans overflow-hidden">
-        <Sidebar />
-        <main className="flex-1 h-full overflow-hidden">
+      {/* 100dvh is crucial for iOS Safari so it doesn't get hidden under the URL bar */}
+      <div className="flex flex-col md:flex-row h-[100dvh] w-full font-sans overflow-hidden">
+        {/* Desktop Sidebar (hidden on mobile) */}
+        <div className="hidden md:block">
+          <Sidebar />
+        </div>
+
+        {/* Main Content Area */}
+        <main className="flex-1 h-full overflow-hidden relative">
           <AnimatedRoutes />
         </main>
+
+        {/* Mobile Bottom Nav (hidden on desktop) */}
+        <div className="block md:hidden">
+          <MobileNav />
+        </div>
       </div>
     </BrowserRouter>
   );

@@ -51,8 +51,8 @@ export default function TopicLesson() {
   ];
 
   return (
-    <div className="p-6 md:p-10 w-full max-w-6xl mx-auto h-full overflow-y-auto flex flex-col">
-      <Link to="/learn" className="inline-flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition-colors font-medium mb-6">
+    <div className="p-4 md:p-10 w-full max-w-6xl mx-auto h-full overflow-y-auto flex flex-col">
+      <Link to="/learn" className="inline-flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition-colors font-medium mb-4 py-2">
         <ArrowLeft size={18} /> Quay lại lộ trình
       </Link>
 
@@ -76,10 +76,10 @@ export default function TopicLesson() {
       {/* Tabs Navigation */}
       <div className="flex gap-2 mb-8 bg-slate-100 p-1.5 rounded-2xl w-full max-w-2xl">
         {tabs.map((tab) => (
-          <button
+            <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id as any)}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm transition-all relative ${
+            className={`flex-1 flex items-center justify-center gap-2 py-3 px-2 sm:px-4 rounded-xl font-bold text-xs sm:text-sm transition-all relative ${
               activeTab === tab.id ? 'text-indigo-700' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'
             }`}
           >
@@ -90,8 +90,8 @@ export default function TopicLesson() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
             )}
-            <span className="relative z-10 flex items-center gap-2">
-              {tab.icon} {tab.label}
+            <span className="relative z-10 flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+              {tab.icon} <span>{tab.label}</span>
             </span>
           </button>
         ))}
