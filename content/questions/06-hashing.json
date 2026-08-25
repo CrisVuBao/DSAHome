@@ -1,0 +1,34 @@
+[
+  {
+    "TopicId": 6,
+    "Content": "Tốc độ tìm kiếm trung bình của Hash Table là bao nhiêu?",
+    "QuestionType": 0,
+    "Options": "[\"O(1)\", \"O(n)\", \"O(log n)\", \"O(n log n)\"]",
+    "CorrectAnswer": "O(1)",
+    "Explanation": "Với hàm băm tốt và ít đụng độ, Hash Table có thể truy xuất trực tiếp ô nhớ trong O(1)."
+  },
+  {
+    "TopicId": 6,
+    "Content": "Đụng độ (Collision) trong bảng băm xảy ra khi nào?",
+    "QuestionType": 0,
+    "Options": "[\"Khi bảng băm hết bộ nhớ\", \"Khi 2 Key khác nhau nhưng Hash Function tạo ra cùng một giá trị băm (cùng index)\", \"Khi Hash Function không tồn tại\", \"Khi Key bị null\"]",
+    "CorrectAnswer": "Khi 2 Key khác nhau nhưng Hash Function tạo ra cùng một giá trị băm (cùng index)",
+    "Explanation": "Dù hàm băm tốt đến đâu, vì đầu vào là vô hạn còn đầu ra là hữu hạn nên luôn có xác suất đụng độ (Pigeonhole Principle)."
+  },
+  {
+    "TopicId": 6,
+    "Content": "Kỹ thuật Chaining để xử lý đụng độ thường sử dụng cấu trúc dữ liệu nào?",
+    "QuestionType": 0,
+    "Options": "[\"Stack\", \"Queue\", \"Linked List\", \"Binary Tree\"]",
+    "CorrectAnswer": "Linked List",
+    "Explanation": "Trong Chaining, mỗi phần tử của mảng là một danh sách liên kết. Nếu bị trùng vị trí, nó sẽ móc tiếp vào danh sách liên kết đó."
+  },
+  {
+    "TopicId": 6,
+    "Content": "Trong C#, cấu trúc dữ liệu nào dưới đây là bản chất thực sự của Hash Table?",
+    "QuestionType": 0,
+    "Options": "[\"List<T>\", \"Dictionary<TKey, TValue>\", \"Queue<T>\", \"Stack<T>\"]",
+    "CorrectAnswer": "Dictionary<TKey, TValue>",
+    "Explanation": "Dictionary trong C# lưu trữ dữ liệu dạng Key-Value và sử dụng kỹ thuật Hash Table ở bên dưới để tra cứu O(1)."
+  }
+]

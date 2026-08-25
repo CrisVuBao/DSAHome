@@ -1,0 +1,34 @@
+[
+  {
+    "TopicId": 5,
+    "Content": "Trong Cây Tìm Kiếm Nhị Phân (BST), tính chất nào sau đây luôn ĐÚNG?",
+    "QuestionType": 0,
+    "Options": "[\"Tất cả node con bên trái nhỏ hơn node hiện tại, bên phải lớn hơn\", \"Cây luôn luôn cân bằng\", \"Node gốc (Root) luôn là phần tử lớn nhất\", \"Mỗi node có tối đa 3 con\"]",
+    "CorrectAnswer": "Tất cả node con bên trái nhỏ hơn node hiện tại, bên phải lớn hơn",
+    "Explanation": "Đây là định nghĩa cốt lõi của BST, giúp việc tìm kiếm đạt tốc độ O(log n) trong trường hợp trung bình."
+  },
+  {
+    "TopicId": 5,
+    "Content": "Cấu trúc dữ liệu nào thường được dùng để cài đặt thuật toán BFS (Duyệt theo chiều rộng)?",
+    "QuestionType": 0,
+    "Options": "[\"Stack\", \"Queue\", \"Array\", \"Hash Table\"]",
+    "CorrectAnswer": "Queue",
+    "Explanation": "BFS duyệt theo từng tầng, do đó ta cần Queue (FIFO) để ghi nhớ và xử lý các đỉnh theo thứ tự tầng từ trên xuống."
+  },
+  {
+    "TopicId": 5,
+    "Content": "Mối quan hệ giữa Cây (Tree) và Đồ thị (Graph) là gì?",
+    "QuestionType": 0,
+    "Options": "[\"Cây là Đồ thị có chu trình\", \"Đồ thị là một loại Cây\", \"Cây là một Đồ thị có hướng vô chu trình và liên thông\", \"Chúng hoàn toàn không liên quan\"]",
+    "CorrectAnswer": "Cây là một Đồ thị có hướng vô chu trình và liên thông",
+    "Explanation": "Cây bản chất là một đồ thị đặc biệt: không có chu trình (không lặp vòng) và tất cả các đỉnh đều được liên kết."
+  },
+  {
+    "TopicId": 5,
+    "Content": "Trường hợp xấu nhất của thao tác Tìm kiếm trong một BST là O(n). Tại sao?",
+    "QuestionType": 0,
+    "Options": "[\"Vì bộ nhớ bị quá tải\", \"Khi cây bị lệch (skewed) hoàn toàn thành một danh sách liên kết\", \"Vì máy tính luôn duyệt từ dưới lên trên\", \"Do hàm băm bị đụng độ\"]",
+    "CorrectAnswer": "Khi cây bị lệch (skewed) hoàn toàn thành một danh sách liên kết",
+    "Explanation": "Nếu bạn chèn dữ liệu đã được sắp xếp sẵn (vd: 1, 2, 3, 4) vào BST, cây sẽ bị lệch hẳn sang một bên, làm cho việc tìm kiếm phải duyệt n phần tử (O(n))."
+  }
+]

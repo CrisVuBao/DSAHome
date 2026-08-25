@@ -1,0 +1,34 @@
+[
+  {
+    "TopicId": 7,
+    "Content": "Bài toán nào sau đây là dấu hiệu rõ nhất cho thấy có thể sử dụng Quy hoạch động (DP)?",
+    "QuestionType": 0,
+    "Options": "[\"Cần sắp xếp mảng dữ liệu cực lớn\", \"Có các bài toán con lặp đi lặp lại (Overlapping Subproblems)\", \"Duyệt qua các thư mục trong máy tính\", \"Tìm phần tử lớn nhất trong mảng\"]",
+    "CorrectAnswer": "Có các bài toán con lặp đi lặp lại (Overlapping Subproblems)",
+    "Explanation": "DP tỏa sáng khi ta phải giải lại cùng một bài toán nhỏ rất nhiều lần (như cây đệ quy của Fibonacci). DP sẽ nhớ lại kết quả để không phải tính lại."
+  },
+  {
+    "TopicId": 7,
+    "Content": "Memoization (Ghi nhớ) trong Quy hoạch động áp dụng cơ chế gì?",
+    "QuestionType": 0,
+    "Options": "[\"Dùng vòng lặp For đi từ bài nhỏ đến bài lớn\", \"Đệ quy từ bài lớn xuống bài nhỏ (Top-Down) và Cache lại kết quả\", \"Random ngẫu nhiên một đáp án\", \"Luôn luôn tối ưu không gian bộ nhớ về O(1)\"]",
+    "CorrectAnswer": "Đệ quy từ bài lớn xuống bài nhỏ (Top-Down) và Cache lại kết quả",
+    "Explanation": "Memoization là hướng tiếp cận Top-Down, ta gọi đệ quy bình thường, nhưng trước khi tính sẽ kiểm tra xem trong Cache (bảng băm/mảng) đã có đáp án chưa."
+  },
+  {
+    "TopicId": 7,
+    "Content": "Tabulation (Lập bảng) khác gì so với Memoization?",
+    "QuestionType": 0,
+    "Options": "[\"Nó dùng đệ quy\", \"Nó đi từ bài toán nhỏ nhất lên bài toán lớn (Bottom-up) bằng vòng lặp\", \"Nó luôn tốn nhiều bộ nhớ hơn\", \"Nó chỉ dùng được cho cấu trúc Cây\"]",
+    "CorrectAnswer": "Nó đi từ bài toán nhỏ nhất lên bài toán lớn (Bottom-up) bằng vòng lặp",
+    "Explanation": "Tabulation không dùng đệ quy mà dùng vòng lặp, tính sẵn các bài toán cơ sở (base case) rồi điền dần lên các phần tử lớn hơn trong bảng (mảng)."
+  },
+  {
+    "TopicId": 7,
+    "Content": "Với bài toán tính số Fibonacci thứ n (F(n)), nếu chỉ dùng đệ quy thuần (không DP), độ phức tạp thời gian là bao nhiêu?",
+    "QuestionType": 0,
+    "Options": "[\"O(1)\", \"O(n)\", \"O(n log n)\", \"O(2^n)\"]",
+    "CorrectAnswer": "O(2^n)",
+    "Explanation": "Hàm đệ quy `F(n) = F(n-1) + F(n-2)` sẽ chẻ đôi liên tục tạo thành cây nhị phân, dẫn đến độ phức tạp hàm mũ O(2^n), cực kỳ chậm. Nếu áp dụng DP, nó sẽ giảm còn O(n)."
+  }
+]

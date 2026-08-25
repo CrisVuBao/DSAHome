@@ -1,0 +1,22 @@
+[
+  {
+    "TopicId": 5,
+    "Front": "Định nghĩa thuật toán DFS (Depth-First Search)?",
+    "Back": "Thuật toán duyệt đồ thị/cây bằng cách đi sâu vào một nhánh đến tận Leaf rồi mới quay lui (Backtrack). Cài đặt bằng Stack hoặc Đệ quy."
+  },
+  {
+    "TopicId": 5,
+    "Front": "Định nghĩa thuật toán BFS (Breadth-First Search)?",
+    "Back": "Thuật toán duyệt đồ thị/cây theo từng tầng (Level). Cài đặt bằng Queue."
+  },
+  {
+    "TopicId": 5,
+    "Front": "Node lá (Leaf Node) là gì?",
+    "Back": "Là node không có bất kỳ node con nào (Left = null và Right = null)."
+  },
+  {
+    "TopicId": 5,
+    "Front": "Trường hợp xấu nhất của BST (O(n)) được khắc phục bằng cách nào?",
+    "Back": "Sử dụng các Cây Tự Cân Bằng (Self-Balancing Trees) như AVL Tree hoặc Red-Black Tree."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "TopicId": 6,
+    "Front": "Cấu trúc dữ liệu nào có tốc độ Search, Insert, Delete đều là O(1) trung bình?",
+    "Back": "Hash Table (Bảng băm)."
+  },
+  {
+    "TopicId": 6,
+    "Front": "Open Addressing (Dò tìm mở) là kỹ thuật giải quyết đụng độ như thế nào?",
+    "Back": "Thay vì dùng Linked List, nó sẽ dò tìm vị trí trống (probe) tiếp theo trong chính mảng băm đó để lưu phần tử đụng độ."
+  },
+  {
+    "TopicId": 6,
+    "Front": "Load Factor (Hệ số tải) trong Hash Table là gì?",
+    "Back": "Tỷ lệ giữa số lượng phần tử đang có và tổng kích thước mảng băm (N / K). Khi vượt quá mức cho phép (vd 75%), Bảng băm phải Resize."
+  }
+]

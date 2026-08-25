@@ -1,0 +1,14 @@
+{
+  "Id": 5,
+  "Name": "Cây & Đồ thị (Trees & Graphs)",
+  "Description": "Khám phá cấu trúc dữ liệu phi tuyến tính: Binary Tree, BST, DFS, BFS.",
+  "Order": 5,
+  "Category": 0,
+  "Difficulty": 1,
+  "Theory": "## 1. Cây (Tree)\n\nCây là cấu trúc dữ liệu **phi tuyến tính**, tổ chức dữ liệu theo dạng phân cấp. Nó bao gồm các **Node** được nối với nhau bởi các **Edge** (cạnh).\n\n### Khái niệm cơ bản\n- **Root:** Node gốc, không có node cha.\n- **Leaf:** Node lá, không có node con.\n- **Binary Tree (Cây nhị phân):** Mỗi node có tối đa 2 con (Left và Right).\n- **Binary Search Tree (BST - Cây tìm kiếm nhị phân):** \n  - Mọi node bên trái đều NHỎ HƠN node hiện tại.\n  - Mọi node bên phải đều LỚN HƠN node hiện tại.\n\n## 2. Đồ thị (Graph)\n\nĐồ thị là một tập hợp các **Đỉnh (Vertices)** và các **Cạnh (Edges)** nối chúng. Khác với Cây, Đồ thị có thể có chu trình (Cycles) và một đỉnh có thể kết nối với nhiều đỉnh khác không theo dạng cha-con.\n\n### Các thuật toán duyệt cơ bản\n- **DFS (Depth-First Search - Duyệt theo chiều sâu):** Đi sâu vào từng nhánh đến tận cùng (Leaf) trước khi quay lui. Thường dùng `Stack` hoặc Đệ quy.\n- **BFS (Breadth-First Search - Duyệt theo chiều rộng):** Duyệt từng tầng (level) của đồ thị. Thường dùng `Queue`.",
+  "TimeComplexity": "BST (Tìm kiếm/Thêm/Xóa): Trung bình O(log n), Xấu nhất O(n) | DFS/BFS: O(V + E)",
+  "SpaceComplexity": "BST: O(n) | DFS/BFS: O(V) (với V là số đỉnh)",
+  "CodeExamples": "```csharp\n// Node của Cây Nhị Phân\npublic class TreeNode {\n    public int Val;\n    public TreeNode Left;\n    public TreeNode Right;\n    public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {\n        this.Val = val;\n        this.Left = left;\n        this.Right = right;\n    }\n}\n\n// BFS đơn giản dùng Queue\nQueue<TreeNode> q = new Queue<TreeNode>();\nq.Enqueue(root);\nwhile (q.Count > 0) {\n    var node = q.Dequeue();\n    Console.WriteLine(node.Val);\n    if (node.Left != null) q.Enqueue(node.Left);\n    if (node.Right != null) q.Enqueue(node.Right);\n}\n```",
+  "RealWorldExamples": "Cây: Hệ thống thư mục máy tính, Cấu trúc DOM HTML. Đồ thị: Google Maps, Mạng xã hội (bạn bè liên kết).",
+  "Prerequisites": "Linked Lists, Stacks & Queues"
+}

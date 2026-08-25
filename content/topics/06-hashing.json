@@ -1,0 +1,14 @@
+{
+  "Id": 6,
+  "Name": "Bảng băm (Hashing)",
+  "Description": "Cấu trúc dữ liệu cho phép tra cứu (Lookup) cực nhanh trong O(1). Khám phá Hash Table, Hash Set và Xử lý Đụng độ.",
+  "Order": 6,
+  "Category": 0,
+  "Difficulty": 1,
+  "Theory": "## Bảng Băm (Hash Table / Hash Map)\n\nBảng băm là một cấu trúc dữ liệu lưu trữ dữ liệu dưới dạng các cặp `Key-Value`. Điểm đặc biệt của nó là sử dụng một **Hàm băm (Hash Function)** để biến đổi `Key` thành một chỉ số index trong mảng lưu trữ gốc.\n\n### Cách hoạt động\n1. Bạn cung cấp một `Key` (vd: \"Alice\").\n2. Hash Function tính toán: `Hash(\"Alice\") = 4`.\n3. Giá trị `Value` được lưu/lấy tại vị trí số 4 của mảng nội bộ.\n\n### Đụng độ (Collision) là gì?\nVì số lượng Key có thể là vô hạn, nhưng kích thước Bảng Băm là hữu hạn, nên sẽ có trường hợp hai Key khác nhau bị băm ra cùng một vị trí (ví dụ: `Hash(\"Bob\") = 4`). Đây gọi là Đụng độ.\n\n#### Cách giải quyết Đụng độ:\n- **Chaining:** Mỗi index của bảng chứa một Danh sách liên kết (Linked List). Khi đụng độ, ta cứ thêm tiếp vào List đó.\n- **Open Addressing:** Nếu vị trí 4 đã bị chiếm, ta dò tìm các vị trí tiếp theo (5, 6, 7...) cho đến khi thấy ô trống.\n\n### Lợi ích tuyệt đỉnh\n- Nếu hàm băm tốt và ít đụng độ, tốc độ thêm (Insert), xóa (Delete), tìm kiếm (Search) đều là **O(1)** hằng số.",
+  "TimeComplexity": "Trung bình: O(1) | Trường hợp xấu nhất (Đụng độ liên tục): O(n)",
+  "SpaceComplexity": "O(n)",
+  "CodeExamples": "```csharp\n// Trong C#, Bảng băm được gọi là Dictionary\nDictionary<string, int> phoneBook = new Dictionary<string, int>();\n\n// Thêm O(1)\nphoneBook.Add(\"Alice\", 12345);\nphoneBook[\"Bob\"] = 67890;\n\n// Tra cứu O(1)\nif (phoneBook.ContainsKey(\"Alice\")) {\n    int num = phoneBook[\"Alice\"];\n    Console.WriteLine(num);\n}\n```",
+  "RealWorldExamples": "Bộ nhớ đệm (Caching), Kiểm tra User có tồn tại trong CSDL (Database Indexing), Bộ đếm từ vựng (Word Counter).",
+  "Prerequisites": "Arrays, Linked Lists"
+}

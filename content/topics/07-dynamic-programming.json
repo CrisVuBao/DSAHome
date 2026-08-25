@@ -1,0 +1,14 @@
+{
+  "Id": 7,
+  "Name": "Quy hoạch động (Dynamic Programming)",
+  "Description": "Kỹ thuật tối ưu hóa code tuyệt đỉnh: nhớ lại kết quả cũ để không phải tính lại. Top-down (Memoization) & Bottom-up (Tabulation).",
+  "Order": 7,
+  "Category": 2,
+  "Difficulty": 2,
+  "Theory": "## Quy hoạch động (DP)\n\nQuy hoạch động không phải là một loại cấu trúc dữ liệu, mà là một **kỹ thuật / chiến lược giải thuật** để giải quyết các bài toán phức tạp bằng cách bẻ nhỏ chúng thành các bài toán con chồng chéo (Overlapping Subproblems), giải quyết từng bài toán một và **lưu lại kết quả (Caching)** để tránh việc tính đi tính lại.\n\n### 2 phương pháp tiếp cận chính:\n\n#### 1. Top-Down (Memoization - Đệ quy có nhớ)\n- Bắt đầu từ bài toán lớn, gọi đệ quy xuống các bài toán nhỏ hơn.\n- Khi tính xong bài toán nhỏ nào, ta lưu kết quả vào một mảng/dictionary.\n- Lần sau gặp lại bài toán nhỏ y hệt, ta chỉ việc lấy kết quả đã lưu ra dùng thay vì đệ quy lại.\n\n#### 2. Bottom-Up (Tabulation - Lập bảng)\n- Bắt đầu giải bài toán nhỏ nhất trước (Base case).\n- Lưu kết quả vào một mảng vòng lặp.\n- Dùng kết quả bài nhỏ để tính bài lớn hơn, lặp cho tới khi tới đỉnh.\n- Dùng vòng lặp `for/while` thay vì đệ quy.\n\n### Khi nào áp dụng DP?\n- **Bài toán con chồng chéo (Overlapping Subproblems):** Các bước đệ quy gọi lại cùng một trạng thái.\n- **Cấu trúc con tối ưu (Optimal Substructure):** Giải pháp tối ưu của bài toán lớn được tạo thành từ giải pháp tối ưu của bài toán nhỏ.",
+  "TimeComplexity": "Ví dụ Fibonacci: Từ O(2^n) (Đệ quy thuần) giảm xuống còn O(n) (nhờ DP).",
+  "SpaceComplexity": "Thường là O(n) để lưu trữ Bảng nhớ (Cache/Table). Đôi khi có thể tối ưu còn O(1).",
+  "CodeExamples": "```csharp\n// Fibonacci - Bottom-Up (Tabulation)\npublic int Fib(int n) {\n    if (n <= 1) return n;\n    int[] dp = new int[n + 1];\n    dp[0] = 0; \n    dp[1] = 1;\n    \n    for(int i = 2; i <= n; i++) {\n        // Tận dụng kết quả đã tính ở i-1 và i-2\n        dp[i] = dp[i-1] + dp[i-2];\n    }\n    return dp[n];\n}\n```",
+  "RealWorldExamples": "Tìm đường đi ngắn nhất (Bản đồ), Bài toán Xếp ba lô (Balo Knapsack), So sánh chuỗi DNA.",
+  "Prerequisites": "Arrays, Đệ quy (Recursion)"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "TopicId": 7,
+    "Front": "Hai điều kiện tiên quyết để áp dụng Quy hoạch động (DP)?",
+    "Back": "1. Bài toán con chồng chéo (Overlapping Subproblems)\n2. Cấu trúc con tối ưu (Optimal Substructure)"
+  },
+  {
+    "TopicId": 7,
+    "Front": "Memoization (Top-Down) là gì?",
+    "Back": "Dùng đệ quy đi từ bài toán lớn xuống nhỏ, dùng bảng lưu lại kết quả của mỗi bước để tái sử dụng."
+  },
+  {
+    "TopicId": 7,
+    "Front": "Tabulation (Bottom-Up) là gì?",
+    "Back": "Dùng vòng lặp giải bài toán từ cơ sở (nhỏ nhất) dần dần lên tới bài toán lớn nhất. Tránh được chi phí gọi hàm (Call Stack) của đệ quy."
+  }
+]

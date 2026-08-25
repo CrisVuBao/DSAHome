@@ -9,11 +9,6 @@ public static class DataSeeder
     {
         await context.Database.EnsureCreatedAsync();
 
-        if (context.Topics.Any())
-        {
-            return; // Db has been seeded
-        }
-
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         // Seed Topics
@@ -27,8 +22,11 @@ public static class DataSeeder
                 var topic = JsonSerializer.Deserialize<Topic>(json, options);
                 if (topic != null)
                 {
-                    topic.Id = 0; // Let DB generate ID
-                    context.Topics.Add(topic);
+                    if (!context.Topics.Any(t => t.Name == topic.Name))
+                    {
+                        topic.Id = 0;
+                        context.Topics.Add(topic);
+                    }
                 }
             }
             await context.SaveChangesAsync();
@@ -45,8 +43,14 @@ public static class DataSeeder
                 var questions = JsonSerializer.Deserialize<List<Question>>(json, options);
                 if (questions != null && questions.Any())
                 {
-                    foreach (var q in questions) q.Id = 0;
-                    context.Questions.AddRange(questions);
+                    foreach (var q in questions) 
+                    {
+                        if (!context.Questions.Any(existing => existing.Content == q.Content))
+                        {
+                            q.Id = 0;
+                            context.Questions.Add(q);
+                        }
+                    }
                 }
             }
             await context.SaveChangesAsync();
@@ -63,8 +67,14 @@ public static class DataSeeder
                 var flashcards = JsonSerializer.Deserialize<List<Flashcard>>(json, options);
                 if (flashcards != null && flashcards.Any())
                 {
-                    foreach (var f in flashcards) f.Id = 0;
-                    context.Flashcards.AddRange(flashcards);
+                    foreach (var f in flashcards)
+                    {
+                        if (!context.Flashcards.Any(existing => existing.Front == f.Front))
+                        {
+                            f.Id = 0;
+                            context.Flashcards.Add(f);
+                        }
+                    }
                 }
             }
             await context.SaveChangesAsync();
