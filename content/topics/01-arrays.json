@@ -1,0 +1,14 @@
+{
+  "Id": 1,
+  "Name": "Arrays (Mảng)",
+  "Category": 0,
+  "Difficulty": 0,
+  "Description": "Cấu trúc dữ liệu cơ bản nhất, lưu trữ các phần tử liên tiếp trong bộ nhớ.",
+  "Theory": "## Arrays (Mảng) là gì?\n\nMảng là một tập hợp các phần tử cùng kiểu dữ liệu, được lưu trữ tại các vị trí bộ nhớ liên tiếp nhau. Đặc điểm nổi bật của mảng là khả năng truy xuất ngẫu nhiên (random access) siêu nhanh thông qua chỉ số (index).\n\n### Đặc điểm chính\n- **Chỉ số (Index):** Bắt đầu từ `0`.\n- **Kích thước:** Thường là cố định (Static Array), nhưng nhiều ngôn ngữ hỗ trợ mảng động (Dynamic Array như `List<T>` trong C#).\n- **Truy xuất:** `O(1)` - rất nhanh vì tính được ngay địa chỉ bộ nhớ.\n\n### Ưu điểm\n- Truy cập phần tử bất kỳ bằng index cực nhanh `O(1)`.\n- Tiết kiệm bộ nhớ (không cần lưu thêm con trỏ như Linked List).\n- Dữ liệu liên tiếp giúp tối ưu cache của CPU.\n\n### Nhược điểm\n- Kích thước cố định (đối với mảng tĩnh).\n- Chèn/Xóa phần tử ở giữa chậm `O(n)` vì phải dịch chuyển các phần tử khác.",
+  "TimeComplexity": "Truy cập: O(1) | Tìm kiếm: O(n) | Chèn/Xóa ở cuối: O(1) | Chèn/Xóa ở giữa/đầu: O(n)",
+  "SpaceComplexity": "O(n)",
+  "CodeExamples": "```csharp\n// Khởi tạo mảng\nint[] numbers = new int[5] { 10, 20, 30, 40, 50 };\n\n// Truy cập phần tử - O(1)\nint first = numbers[0]; // 10\n\n// Duyệt qua mảng - O(n)\nfor(int i = 0; i < numbers.Length; i++)\n{\n    Console.WriteLine(numbers[i]);\n}\n```",
+  "RealWorldExamples": "Danh sách ghế ngồi trong rạp chiếu phim (hàng 1 ghế 1, 2, 3...), danh sách học sinh trong sổ điểm.",
+  "Prerequisites": "",
+  "Order": 1
+}

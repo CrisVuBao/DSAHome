@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSALearningHub.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c8e22308297c6ba18aac66cbc64a5e37b2d6fdc")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSALearningHub.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSALearningHub.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

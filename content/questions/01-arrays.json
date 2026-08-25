@@ -1,0 +1,52 @@
+[
+  {
+    "TopicId": 1,
+    "Type": 0,
+    "Difficulty": 0,
+    "Content": "Độ phức tạp thời gian khi truy cập một phần tử trong mảng tĩnh bằng index là bao nhiêu?",
+    "Options": "[\"O(1)\", \"O(n)\", \"O(log n)\", \"O(n^2)\"]",
+    "CorrectAnswer": "O(1)",
+    "Explanation": "Vì các phần tử mảng được lưu trữ liên tiếp trong bộ nhớ, chương trình có thể tính toán chính xác địa chỉ của phần tử bằng công thức: Địa chỉ = Địa chỉ cơ sở + (Index * Kích thước 1 phần tử). Do đó mất O(1) thời gian.",
+    "Hints": "[\"Nghĩ xem làm sao máy tính tìm được địa chỉ của phần tử thứ i trong bộ nhớ.\"]"
+  },
+  {
+    "TopicId": 1,
+    "Type": 0,
+    "Difficulty": 0,
+    "Content": "Phần tử đầu tiên trong mảng thường có chỉ số (index) là bao nhiêu?",
+    "Options": "[\"0\", \"1\", \"-1\", \"Tùy thuộc vào ngôn ngữ lập trình\"]",
+    "CorrectAnswer": "0",
+    "Explanation": "Hầu hết các ngôn ngữ lập trình phổ biến (C, C++, C#, Java, Python, JS) đều sử dụng zero-based indexing (bắt đầu từ 0). Số 0 biểu thị khoảng cách (offset) từ phần tử đầu tiên là 0.",
+    "Hints": "[\"Offset (khoảng cách) từ phần tử đầu tiên đến chính nó là bao nhiêu?\"]"
+  },
+  {
+    "TopicId": 1,
+    "Type": 0,
+    "Difficulty": 1,
+    "Content": "Nhược điểm lớn nhất của mảng tĩnh (Static Array) là gì?",
+    "Options": "[\"Kích thước cố định, không thể thay đổi sau khi tạo\", \"Truy cập các phần tử chậm\", \"Tốn nhiều bộ nhớ hơn Linked List\", \"Không thể lưu trữ các kiểu dữ liệu phức tạp\"]",
+    "CorrectAnswer": "Kích thước cố định, không thể thay đổi sau khi tạo",
+    "Explanation": "Mảng tĩnh yêu cầu bạn phải khai báo kích thước ngay từ đầu. Nếu cần lưu nhiều hơn, bạn phải tạo một mảng mới lớn hơn và copy dữ liệu qua (chi phí O(n)).",
+    "Hints": "[\"Điều gì xảy ra nếu bạn tạo mảng 10 phần tử nhưng lại muốn thêm phần tử thứ 11?\"]"
+  },
+  {
+    "TopicId": 1,
+    "Type": 0,
+    "Difficulty": 1,
+    "Content": "Độ phức tạp khi chèn một phần tử vào ĐẦU mảng là bao nhiêu?",
+    "Options": "[\"O(1)\", \"O(n)\", \"O(log n)\", \"O(n log n)\"]",
+    "CorrectAnswer": "O(n)",
+    "Explanation": "Khi chèn vào đầu mảng, bạn phải dịch chuyển TẤT CẢ các phần tử hiện có về phía sau 1 vị trí để tạo khoảng trống. Việc này tốn thời gian tỉ lệ thuận với số phần tử n.",
+    "Hints": "[\"Để có chỗ trống ở index 0, các phần tử cũ phải đi đâu?\"]"
+  },
+  {
+    "TopicId": 1,
+    "Type": 0,
+    "Difficulty": 0,
+    "Content": "Trong C#, `List<T>` bên dưới lớp vỏ (under the hood) sử dụng cấu trúc dữ liệu gì?",
+    "Options": "[\"Mảng (Array)\", \"Danh sách liên kết (Linked List)\", \"Cây nhị phân (Binary Tree)\", \"Hash Table\"]",
+    "CorrectAnswer": "Mảng (Array)",
+    "Explanation": "List<T> trong C# thực chất là một Dynamic Array. Nó sử dụng một mảng tĩnh bên dưới. Khi mảng này đầy, nó tự động tạo mảng mới gấp đôi kích thước và copy dữ liệu cũ sang.",
+    "Hints": "[\"Dynamic Array được xây dựng dựa trên cái gì?\"]"
+  }
+]

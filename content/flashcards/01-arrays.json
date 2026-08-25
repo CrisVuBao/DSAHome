@@ -1,0 +1,37 @@
+[
+  {
+    "TopicId": 1,
+    "Front": "Time Complexity: Truy cập phần tử bất kỳ (Access) trong Array",
+    "Back": "O(1) - Khả năng Random Access",
+    "Difficulty": 0,
+    "Tags": "time-complexity, array, access"
+  },
+  {
+    "TopicId": 1,
+    "Front": "Time Complexity: Chèn/Xóa phần tử ở ĐẦU hoặc GIỮA mảng",
+    "Back": "O(n) - Do phải dịch chuyển các phần tử khác",
+    "Difficulty": 1,
+    "Tags": "time-complexity, array, insert, delete"
+  },
+  {
+    "TopicId": 1,
+    "Front": "Time Complexity: Chèn phần tử vào CUỐI mảng (khi còn dung lượng trống)",
+    "Back": "O(1)",
+    "Difficulty": 0,
+    "Tags": "time-complexity, array, insert"
+  },
+  {
+    "TopicId": 1,
+    "Front": "Dynamic Array (vd: List<T>) hoạt động như thế nào khi bị đầy bộ nhớ tĩnh bên dưới?",
+    "Back": "Tạo một mảng tĩnh mới với kích thước lớn hơn (thường là gấp đôi), sau đó copy toàn bộ phần tử từ mảng cũ sang mảng mới (chi phí O(n)).",
+    "Difficulty": 1,
+    "Tags": "concept, dynamic-array"
+  },
+  {
+    "TopicId": 1,
+    "Front": "Tại sao Array lại có lợi thế về CPU Cache hơn Linked List?",
+    "Back": "Vì các phần tử của Array được lưu trữ liên tiếp trong bộ nhớ vật lý. Khi CPU đọc 1 phần tử, nó sẽ tải cả block nhớ xung quanh vào Cache (Spatial Locality), làm tăng tốc độ truy xuất.",
+    "Difficulty": 2,
+    "Tags": "memory, cache, advanced"
+  }
+]

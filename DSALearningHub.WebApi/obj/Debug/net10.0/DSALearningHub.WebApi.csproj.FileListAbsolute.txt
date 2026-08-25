@@ -167,3 +167,4 @@ D:\Hoc_Tap\C_Shape\Hoc\DSALearningHub.WebApi\obj\Debug\net10.0\refint\DSALearnin
 D:\Hoc_Tap\C_Shape\Hoc\DSALearningHub.WebApi\obj\Debug\net10.0\DSALearningHub.WebApi.pdb
 D:\Hoc_Tap\C_Shape\Hoc\DSALearningHub.WebApi\obj\Debug\net10.0\DSALearningHub.WebApi.genruntimeconfig.cache
 D:\Hoc_Tap\C_Shape\Hoc\DSALearningHub.WebApi\obj\Debug\net10.0\ref\DSALearningHub.WebApi.dll
+D:\Hoc_Tap\C_Shape\Hoc\DSALearningHub.WebApi\obj\Debug\net10.0\DSALearningHub.WebApi.sourcelink.json
