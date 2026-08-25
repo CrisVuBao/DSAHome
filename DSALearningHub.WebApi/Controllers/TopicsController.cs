@@ -32,4 +32,22 @@ public class TopicsController : ControllerBase
         if (topic == null) return NotFound();
         return Ok(topic);
     }
+
+    [HttpGet("{id}/questions")]
+    public async Task<IActionResult> GetTopicQuestions(int id)
+    {
+        var questions = await _context.Questions
+            .Where(q => q.TopicId == id)
+            .Select(q => new 
+            {
+                q.Id,
+                q.Content,
+                q.Options,
+                q.CorrectAnswer,
+                q.Explanation
+            })
+            .ToListAsync();
+            
+        return Ok(questions);
+    }
 }
