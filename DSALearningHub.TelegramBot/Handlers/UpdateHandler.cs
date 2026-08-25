@@ -66,6 +66,10 @@ public class UpdateHandler : IUpdateHandler
             {
                 await HandleProgressCommand(botClient, chatId, userId, cancellationToken);
             }
+            else if (messageText.StartsWith("/review"))
+            {
+                await HandleReviewCommand(botClient, chatId, userId, cancellationToken);
+            }
             else
             {
                 // Echo for now
@@ -205,6 +209,19 @@ public class UpdateHandler : IUpdateHandler
             await botClient.AnswerCallbackQuery(callbackQuery.Id, cancellationToken: cancellationToken);
             await HandleQuizCommand(botClient, callbackQuery.Message!.Chat.Id, cancellationToken);
         }
+        else if (data.StartsWith("show_back_"))
+        {
+            await HandleShowBackAsync(botClient, callbackQuery, cancellationToken);
+        }
+        else if (data.StartsWith("rate_"))
+        {
+            await HandleRateAsync(botClient, callbackQuery, cancellationToken);
+        }
+        else if (data == "next_review")
+        {
+            await botClient.AnswerCallbackQuery(callbackQuery.Id, cancellationToken: cancellationToken);
+            await HandleReviewCommand(botClient, callbackQuery.Message!.Chat.Id, callbackQuery.From.Id, cancellationToken);
+        }
     }
 
     private async Task HandleQuizAnswerAsync(ITelegramBotClient botClient, CallbackQuery callbackQuery, CancellationToken cancellationToken)
@@ -276,6 +293,167 @@ public class UpdateHandler : IUpdateHandler
         await botClient.SendMessage(
             chatId: callbackQuery.Message.Chat.Id,
             text: "Bạn muốn làm tiếp quiz không?",
+            replyMarkup: inlineKeyboard,
+            cancellationToken: cancellationToken);
+    }
+
+    private async Task HandleReviewCommand(ITelegramBotClient botClient, long chatId, long userId, CancellationToken cancellationToken)
+    {
+        using var scope = _serviceProvider.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+        // Tìm flashcard cần ôn (đến hạn)
+        var now = DateTime.UtcNow;
+        var schedule = await db.ReviewSchedules
+            .Include(r => r.Flashcard)
+            .Where(r => r.UserId == userId && r.NextReviewDate <= now)
+            .OrderBy(r => r.NextReviewDate)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        Flashcard? flashcardToReview = schedule?.Flashcard;
+
+        // Nếu không có card đến hạn, tìm 1 card mới chưa từng học
+        if (flashcardToReview == null)
+        {
+            var learnedFlashcardIds = await db.ReviewSchedules
+                .Where(r => r.UserId == userId)
+                .Select(r => r.FlashcardId)
+                .ToListAsync(cancellationToken);
+
+            flashcardToReview = await db.Flashcards
+                .Where(f => !learnedFlashcardIds.Contains(f.Id))
+                .FirstOrDefaultAsync(cancellationToken);
+        }
+
+        if (flashcardToReview == null)
+        {
+            await botClient.SendMessage(chatId: chatId, text: "🎉 Tuyệt vời! Bạn đã ôn tập hết tất cả thẻ ghi nhớ hiện có.", cancellationToken: cancellationToken);
+            return;
+        }
+
+        var inlineKeyboard = new Telegram.Bot.Types.ReplyMarkups.InlineKeyboardMarkup(
+            new[] { Telegram.Bot.Types.ReplyMarkups.InlineKeyboardButton.WithCallbackData("Lật thẻ (Xem đáp án) 🔄", $"show_back_{flashcardToReview.Id}") }
+        );
+
+        string text = $"🃏 **Flashcard Ôn Tập**\n\n**Câu hỏi:** {flashcardToReview.Front}";
+
+        await botClient.SendMessage(
+            chatId: chatId,
+            text: text,
+            parseMode: ParseMode.Markdown,
+            replyMarkup: inlineKeyboard,
+            cancellationToken: cancellationToken);
+    }
+
+    private async Task HandleShowBackAsync(ITelegramBotClient botClient, CallbackQuery callbackQuery, CancellationToken cancellationToken)
+    {
+        var parts = callbackQuery.Data!.Split('_');
+        if (parts.Length != 3 || !int.TryParse(parts[2], out int flashcardId)) return;
+
+        using var scope = _serviceProvider.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+        var flashcard = await db.Flashcards.FindAsync(new object[] { flashcardId }, cancellationToken);
+        if (flashcard == null) return;
+
+        var inlineKeyboard = new Telegram.Bot.Types.ReplyMarkups.InlineKeyboardMarkup(
+            new[]
+            {
+                new[]
+                {
+                    Telegram.Bot.Types.ReplyMarkups.InlineKeyboardButton.WithCallbackData("😰 Quên (0)", $"rate_{flashcardId}_0"),
+                    Telegram.Bot.Types.ReplyMarkups.InlineKeyboardButton.WithCallbackData("🤔 Khó (1)", $"rate_{flashcardId}_1"),
+                },
+                new[]
+                {
+                    Telegram.Bot.Types.ReplyMarkups.InlineKeyboardButton.WithCallbackData("😊 Bình thường (2)", $"rate_{flashcardId}_2"),
+                    Telegram.Bot.Types.ReplyMarkups.InlineKeyboardButton.WithCallbackData("🎯 Quá dễ (3)", $"rate_{flashcardId}_3")
+                }
+            }
+        );
+
+        string text = $"🃏 **Flashcard Ôn Tập**\n\n**Câu hỏi:** {flashcard.Front}\n\n---\n\n**Đáp án:** {flashcard.Back}\n\n_Bạn thấy câu này thế nào?_";
+
+        await botClient.AnswerCallbackQuery(callbackQuery.Id, cancellationToken: cancellationToken);
+        await botClient.EditMessageText(
+            chatId: callbackQuery.Message!.Chat.Id,
+            messageId: callbackQuery.Message.MessageId,
+            text: text,
+            parseMode: ParseMode.Markdown,
+            replyMarkup: inlineKeyboard,
+            cancellationToken: cancellationToken);
+    }
+
+    private async Task HandleRateAsync(ITelegramBotClient botClient, CallbackQuery callbackQuery, CancellationToken cancellationToken)
+    {
+        var parts = callbackQuery.Data!.Split('_');
+        if (parts.Length != 3 || !int.TryParse(parts[1], out int flashcardId) || !int.TryParse(parts[2], out int rating)) return;
+
+        using var scope = _serviceProvider.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+        var schedule = await db.ReviewSchedules.FirstOrDefaultAsync(r => r.UserId == callbackQuery.From.Id && r.FlashcardId == flashcardId, cancellationToken);
+        
+        if (schedule == null)
+        {
+            schedule = new ReviewSchedule
+            {
+                UserId = callbackQuery.From.Id,
+                FlashcardId = flashcardId,
+                Interval = 0,
+                EaseFactor = 2.5,
+                RepetitionCount = 0
+            };
+            db.ReviewSchedules.Add(schedule);
+        }
+
+        // SM-2 Algorithm (simplified)
+        // Rating: 0 (Blackout), 1 (Hard), 2 (Good), 3 (Easy)
+        // In SM-2 it's 0-5, we map 0->0, 1->2, 2->4, 3->5
+        int sm2Rating = rating switch {
+            0 => 0,
+            1 => 2,
+            2 => 4,
+            3 => 5,
+            _ => 0
+        };
+
+        if (sm2Rating >= 3)
+        {
+            if (schedule.RepetitionCount == 0)
+                schedule.Interval = 1;
+            else if (schedule.RepetitionCount == 1)
+                schedule.Interval = 6;
+            else
+                schedule.Interval = (int)Math.Round(schedule.Interval * schedule.EaseFactor);
+                
+            schedule.RepetitionCount++;
+        }
+        else
+        {
+            schedule.RepetitionCount = 0;
+            schedule.Interval = 1;
+        }
+
+        schedule.EaseFactor = schedule.EaseFactor + (0.1 - (5 - sm2Rating) * (0.08 + (5 - sm2Rating) * 0.02));
+        if (schedule.EaseFactor < 1.3) schedule.EaseFactor = 1.3;
+
+        schedule.NextReviewDate = DateTime.UtcNow.AddDays(schedule.Interval);
+        
+        await db.SaveChangesAsync(cancellationToken);
+
+        string nextReviewStr = schedule.Interval == 1 ? "ngày mai" : $"sau {schedule.Interval} ngày nữa";
+
+        var inlineKeyboard = new Telegram.Bot.Types.ReplyMarkups.InlineKeyboardMarkup(
+            new[] { Telegram.Bot.Types.ReplyMarkups.InlineKeyboardButton.WithCallbackData("Ôn câu tiếp theo 🔄", "next_review") }
+        );
+
+        await botClient.AnswerCallbackQuery(callbackQuery.Id, cancellationToken: cancellationToken);
+        await botClient.EditMessageText(
+            chatId: callbackQuery.Message!.Chat.Id,
+            messageId: callbackQuery.Message.MessageId,
+            text: $"Đã ghi nhận! Bạn sẽ ôn lại câu này **{nextReviewStr}**.",
+            parseMode: ParseMode.Markdown,
             replyMarkup: inlineKeyboard,
             cancellationToken: cancellationToken);
     }
