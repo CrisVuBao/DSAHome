@@ -17,21 +17,22 @@ const item = {
 
 export default function Dashboard() {
   const [progress, setProgress] = useState<any>(null);
+  const [leaderboard, setLeaderboard] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   
   const userId = 8916208820;
 
   useEffect(() => {
-    fetch(`http://localhost:5205/api/Progress/${userId}`)
-      .then((res) => {
-        if (!res.ok) throw new Error('Not found');
-        return res.json();
-      })
-      .then((data) => {
-        setProgress(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
+    Promise.all([
+      fetch(`http://localhost:5205/api/Progress/${userId}`).then(r => r.ok ? r.json() : null),
+      fetch(`http://localhost:5205/api/Leaderboard`).then(r => r.ok ? r.json() : [])
+    ])
+    .then(([progData, leadData]) => {
+      setProgress(progData);
+      setLeaderboard(leadData);
+      setLoading(false);
+    })
+    .catch(() => setLoading(false));
   }, [userId]);
 
   if (loading) {
@@ -137,13 +138,46 @@ export default function Dashboard() {
           )}
         </div>
         
-        {/* Placeholder for future charts or activities */}
-        <div className="modern-card rounded-3xl p-8 flex flex-col items-center justify-center text-center">
-          <div className="w-24 h-24 mb-6 rounded-full bg-slate-50 flex items-center justify-center">
-            <Trophy size={40} className="text-slate-300" />
+        {/* Leaderboard */}
+        <div className="modern-card rounded-3xl p-8 flex flex-col">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-amber-100 text-amber-600 rounded-xl"><Trophy size={20} /></div>
+            <h3 className="text-xl font-bold text-slate-800">Bảng xếp hạng</h3>
           </div>
-          <h3 className="text-xl font-bold text-slate-800 mb-2">Bảng xếp hạng</h3>
-          <p className="text-slate-500">Tính năng này sẽ được ra mắt trong Phase 3. Hãy tích cực học tập để leo top nhé!</p>
+          
+          <div className="flex-1">
+            {leaderboard.length > 0 ? (
+              <div className="space-y-3">
+                {leaderboard.map((user: any) => (
+                  <div key={user.userId} className={`flex items-center gap-4 p-4 rounded-2xl border transition-colors ${
+                    user.userId == userId ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-transparent hover:border-slate-200'
+                  }`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                      user.rank === 1 ? 'bg-amber-400 text-white shadow-md' :
+                      user.rank === 2 ? 'bg-slate-300 text-slate-700' :
+                      user.rank === 3 ? 'bg-orange-300 text-white' : 'bg-slate-200 text-slate-500'
+                    }`}>
+                      {user.rank}
+                    </div>
+                    <div className="flex-1">
+                      <p className={`font-bold ${user.userId == userId ? 'text-indigo-700' : 'text-slate-700'}`}>
+                        {user.username} {user.userId == userId && '(Bạn)'}
+                      </p>
+                      <p className="text-xs text-slate-500">Cấp độ {user.level}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-bold text-slate-800">{user.totalXP}</p>
+                      <p className="text-xs text-slate-400">XP</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center py-12 text-slate-400 h-full">
+                <p>Chưa có dữ liệu bảng xếp hạng.</p>
+              </div>
+            )}
+          </div>
         </div>
       </motion.div>
     </motion.div>

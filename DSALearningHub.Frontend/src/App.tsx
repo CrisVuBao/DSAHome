@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Learn from './pages/Learn';
 import Visualizer from './pages/Visualizer';
+import Playground from './pages/Playground';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -14,6 +15,7 @@ function AnimatedRoutes() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/learn" element={<Learn />} />
         <Route path="/visualizer" element={<Visualizer />} />
+        <Route path="/playground" element={<Playground />} />
       </Routes>
     </AnimatePresence>
   );
@@ -27,9 +29,9 @@ function App() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
       
-      <div className="flex min-h-screen font-sans">
+      <div className="flex h-screen w-full font-sans overflow-hidden">
         <Sidebar />
-        <main className="flex-1 h-screen overflow-hidden">
+        <main className="flex-1 h-full overflow-hidden">
           <AnimatedRoutes />
         </main>
       </div>

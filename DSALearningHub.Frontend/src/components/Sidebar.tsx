@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, BookOpen, BarChart2, Bot } from 'lucide-react';
+import { LayoutDashboard, BookOpen, BarChart2, Bot, TerminalSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Sidebar() {
@@ -9,6 +9,7 @@ export default function Sidebar() {
     { to: '/', icon: <LayoutDashboard size={20} />, label: 'Tổng quan' },
     { to: '/learn', icon: <BookOpen size={20} />, label: 'Học tập' },
     { to: '/visualizer', icon: <BarChart2 size={20} />, label: 'Mô phỏng thuật toán' },
+    { to: '/playground', icon: <TerminalSquare size={20} />, label: 'Code Playground' },
   ];
 
   return (
@@ -16,7 +17,7 @@ export default function Sidebar() {
       initial={{ x: -20, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="w-72 bg-slate-900 text-slate-300 min-h-screen flex flex-col m-4 rounded-3xl overflow-hidden relative z-10 shadow-2xl shadow-indigo-900/20"
+      className="w-72 bg-slate-900 text-slate-300 h-[calc(100vh-2rem)] flex flex-col my-4 ml-4 rounded-3xl overflow-hidden relative z-10 shadow-2xl shadow-indigo-900/20"
     >
       <div className="p-8 flex items-center gap-3">
         <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
