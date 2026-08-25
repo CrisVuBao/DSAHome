@@ -1,0 +1,12 @@
+[
+  {
+    "TopicId": 8,
+    "Front": "Độ phức tạp thời gian của Binary Search?",
+    "Back": "O(log n). Do mỗi lần so sánh nó đều chia nửa kích thước bài toán."
+  },
+  {
+    "TopicId": 8,
+    "Front": "Điều kiện để dùng Binary Search là gì?",
+    "Back": "Dữ liệu (Mảng hoặc List) phải đã được Sắp xếp (Sorted) từ trước."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "TopicId": 13,
+    "Content": "Kỹ thuật Hai con trỏ (Two Pointers - chạy ngược chiều từ 2 đầu vào giữa) yêu cầu mảng phải có đặc tính gì để ứng dụng giải bài toán \"Tìm 2 số có tổng bằng K\"?",
+    "QuestionType": 0,
+    "Options": "[\"Mảng không được chứa số âm\", \"Mảng bắt buộc phải được Sắp xếp (Sorted) từ trước\", \"Mảng phải có độ dài chẵn\", \"Mảng không được chứa các số trùng nhau\"]",
+    "CorrectAnswer": "Mảng bắt buộc phải được Sắp xếp (Sorted) từ trước",
+    "Explanation": "Khi mảng đã sắp xếp, nếu tổng 2 con trỏ lớn hơn K, ta biết chắc phải giảm con trỏ Phải xuống. Nếu nhỏ hơn K, ta tăng con trỏ Trái lên. Nếu chưa sắp xếp thì không thể biết phải dịch chuyển con trỏ nào."
+  },
+  {
+    "TopicId": 13,
+    "Content": "Bài toán \"Phát hiện chu trình vòng lặp (Cycle) trong Linked List\" sử dụng kỹ thuật gì?",
+    "QuestionType": 0,
+    "Options": "[\"Sliding Window cố định\", \"Two Pointers chạy ngược chiều (Left/Right)\", \"Two Pointers chạy cùng chiều với tốc độ Nhanh/Chậm (Rùa và Thỏ)\", \"Sắp xếp lại mảng\"]",
+    "CorrectAnswer": "Two Pointers chạy cùng chiều với tốc độ Nhanh/Chậm (Rùa và Thỏ)",
+    "Explanation": "Đây là thuật toán rùa và thỏ của Floyd. Thỏ nhảy 2 bước, rùa đi 1 bước. Nếu có chu trình, chắc chắn thỏ sẽ chạy vòng lại và giẫm vào rùa."
+  },
+  {
+    "TopicId": 13,
+    "Content": "Sự khác biệt lớn nhất về tư duy giữa Sliding Window và Vòng lặp lồng nhau (Nested loops) khi xử lý chuỗi con liên tiếp là gì?",
+    "QuestionType": 0,
+    "Options": "[\"Sliding Window loại bỏ việc tính toán lại các phần tử trùng lặp giữa 2 cửa sổ liền kề\", \"Sliding Window chạy đệ quy, Nested loops chạy tuần tự\", \"Sliding Window cần mảng phụ tốn thêm bộ nhớ\", \"Sliding Window chỉ áp dụng được trên mảng đã sắp xếp\"]",
+    "CorrectAnswer": "Sliding Window loại bỏ việc tính toán lại các phần tử trùng lặp giữa 2 cửa sổ liền kề",
+    "Explanation": "Thay vì tính lại từ đầu tổng/chuỗi của `k` phần tử tiếp theo, ta chỉ lấy giá trị cũ, trừ đi phần tử rớt khỏi cửa sổ bên trái, và cộng phần tử mới bước vào cửa sổ bên phải."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "TopicId": 10,
+    "Content": "Nhược điểm lớn nhất của phương pháp Tham lam (Greedy) là gì?",
+    "QuestionType": 0,
+    "Options": "[\"Chạy quá chậm\", \"Code cực kỳ phức tạp\", \"Không phải lúc nào cũng tìm được đáp án tối ưu (đúng nhất)\", \"Tốn rất nhiều bộ nhớ\"]",
+    "CorrectAnswer": "Không phải lúc nào cũng tìm được đáp án tối ưu (đúng nhất)",
+    "Explanation": "Tham lam chỉ nhìn thấy cái lợi trước mắt ở từng bước. Nếu bài toán không có tính chất Greedy Choice, cái lợi trước mắt có thể dẫn đến thất bại toàn cục."
+  },
+  {
+    "TopicId": 10,
+    "Content": "Thuật toán Tham lam khác biệt cốt lõi nào so với Quy hoạch động (Dynamic Programming)?",
+    "QuestionType": 0,
+    "Options": "[\"DP không lưu kết quả cũ, Greedy thì có\", \"Greedy đưa ra lựa chọn và không bao giờ quay lại (nhìn lại), DP thì tính tất cả trường hợp con rồi mới chọn\", \"Greedy tốn nhiều bộ nhớ hơn DP\", \"Cả hai là một\"]",
+    "CorrectAnswer": "Greedy đưa ra lựa chọn và không bao giờ quay lại (nhìn lại), DP thì tính tất cả trường hợp con rồi mới chọn",
+    "Explanation": "Greedy đi một mạch không quay đầu. DP tính toán kỹ lưỡng mọi nhánh đệ quy rồi cache kết quả để đảm bảo chắc chắn 100% tìm ra lối đi tối ưu."
+  },
+  {
+    "TopicId": 10,
+    "Content": "Với bài toán đưa tiền lẻ (Coin Change), hệ thống tiền nào sau đây nếu dùng Thuật toán Tham lam sẽ cho ra kết quả SAI khi cần trả 30 đồng?",
+    "QuestionType": 0,
+    "Options": "[\"[20, 10, 5, 1]\", \"[20, 15, 1]\", \"[100, 10, 1]\", \"[50, 10, 2]\"]",
+    "CorrectAnswer": "[20, 15, 1]",
+    "Explanation": "Với [20, 15, 1], Greedy sẽ lấy 20 trước, sau đó lấy mười tờ 1 -> Tổng cộng 11 tờ. Trong khi đáp án tối ưu thực sự là lấy 2 tờ 15 (chỉ tốn 2 tờ)."
+  }
+]

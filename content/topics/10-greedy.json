@@ -1,0 +1,14 @@
+{
+  "Id": 10,
+  "Name": "Thuật toán Tham lam (Greedy)",
+  "Description": "Kỹ thuật giải bài toán bằng cách luôn đưa ra lựa chọn tốt nhất ở thời điểm hiện tại, hy vọng nó sẽ dẫn đến tối ưu toàn cục.",
+  "Order": 10,
+  "Category": 2,
+  "Difficulty": 1,
+  "Theory": "## Thuật toán Tham lam (Greedy Algorithms)\n\nTham lam không hẳn là một thuật toán cụ thể, mà là một **phương pháp giải bài toán**. Ở mỗi bước, thuật toán luôn chọn giải pháp trông có vẻ **tốt nhất ngay lúc đó (tối ưu cục bộ)**, với hy vọng sau tất cả các bước ta sẽ đạt được **kết quả tốt nhất (tối ưu toàn cục)**.\n\n### Đặc điểm\n- **Nhanh gọn:** Không cần đệ quy sâu hay lập bảng phức tạp như Quy hoạch động.\n- **Không hối hận:** Đã chọn rồi thì không quay lại (No backtracking).\n- **Nhược điểm lớn nhất:** Không phải lúc nào Tham lam cũng đưa ra đáp án đúng. \n\n### Khi nào áp dụng được?\nĐể Tham lam đúng, bài toán phải thỏa mãn:\n1. **Greedy Choice Property:** Có thể đạt tối ưu toàn cục bằng cách chọn tối ưu cục bộ.\n2. **Optimal Substructure:** Giống DP, bài toán lớn chứa cấu trúc của bài toán nhỏ.\n\n### Ví dụ kinh điển: Trả tiền lẻ (Coin Change)\nBạn là thu ngân cần trả 36 đồng cho khách, với các tờ tiền 20, 10, 5, 1.\n- Thuật toán Tham lam: \"Cứ lấy tờ lớn nhất có thể!\"\n- Lấy 20 -> còn 16. \n- Lấy 10 -> còn 6. \n- Lấy 5 -> còn 1.\n- Lấy 1 -> hết.\nTổng cộng 4 tờ (20, 10, 5, 1) - Tối ưu cực nhanh!\n*Lưu ý: Nếu hệ thống tiền tệ lạ (vd: 20, 15, 1) thì Tham lam sẽ ra kết quả sai khi trả 30.*",
+  "TimeComplexity": "Thường rất nhanh, O(n) hoặc O(n log n) (do thường phải sắp xếp dữ liệu trước khi chọn).",
+  "SpaceComplexity": "Thường là O(1) do không cần bảng nhớ (cache).",
+  "CodeExamples": "```csharp\n// Ví dụ: Bố trí lịch họp (Activity Selection Problem)\n// Chọn nhiều cuộc họp nhất mà không bị trùng thời gian\npublic int MaxActivities(int[] start, int[] end) {\n    // Giả sử mảng đã được sắp xếp tăng dần theo thời gian Kết thúc (end)\n    int i = 0;\n    int count = 1; // Chọn cuộc họp đầu tiên\n    \n    for (int j = 1; j < start.Length; j++) {\n        // Nếu cuộc họp sau bắt đầu sau khi cuộc họp trước kết thúc\n        if (start[j] >= end[i]) {\n            count++;\n            i = j; // Cập nhật lại cuộc họp đang xét\n        }\n    }\n    return count;\n}\n```",
+  "RealWorldExamples": "Dijkstra (Tìm đường ngắn nhất), Nén dữ liệu Huffman, Lập lịch CPU.",
+  "Prerequisites": "Arrays, Sorting"
+}

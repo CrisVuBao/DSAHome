@@ -1,0 +1,12 @@
+[
+  {
+    "TopicId": 13,
+    "Front": "Kỹ thuật Sliding Window thường dùng để giải quyết dạng bài toán nào?",
+    "Back": "Các bài toán tìm giá trị tối ưu của Mảng con (Subarray) hoặc Chuỗi con (Substring) CÁC PHẦN TỬ LIÊN TIẾP NHAU."
+  },
+  {
+    "TopicId": 13,
+    "Front": "Kỹ thuật Two Pointers (Left / Right) giúp giảm độ phức tạp thời gian từ bao nhiêu xuống bao nhiêu?",
+    "Back": "Từ O(n^2) (2 vòng lặp lồng nhau) xuống còn O(n) (1 vòng lặp duy nhất với 2 con trỏ dịch chuyển)."
+  }
+]

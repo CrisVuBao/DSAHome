@@ -1,0 +1,14 @@
+{
+  "Id": 8,
+  "Name": "Thuật toán Tìm kiếm (Searching)",
+  "Description": "Các kỹ thuật tìm kiếm phần tử: Linear Search và Binary Search (Tìm kiếm nhị phân).",
+  "Order": 8,
+  "Category": 1,
+  "Difficulty": 0,
+  "Theory": "## Các thuật toán Tìm Kiếm\n\nTìm kiếm là thao tác cơ bản nhất trong lập trình: tìm một phần tử có tồn tại trong tập dữ liệu hay không, và nằm ở vị trí nào.\n\n### 1. Linear Search (Tìm kiếm tuyến tính)\n- **Cách hoạt động:** Duyệt mảng từ phần tử đầu tiên đến phần tử cuối cùng. Nếu khớp thì trả về vị trí.\n- **Đặc điểm:** Không yêu cầu mảng phải được sắp xếp trước.\n- **Khi nào dùng:** Dữ liệu nhỏ, chưa sắp xếp, hoặc tìm kiếm trên Linked List.\n\n### 2. Binary Search (Tìm kiếm nhị phân) - Tuyệt kỹ O(log n)\n- **Điều kiện tiên quyết:** Mảng **BẮT BUỘC PHẢI ĐƯỢC SẮP XẾP**.\n- **Cách hoạt động:** Dùng chiến lược *Chia để trị*. So sánh phần tử cần tìm (Target) với phần tử ở Giữa (Mid). \n  - Nếu Target == Mid: Tìm thấy!\n  - Nếu Target < Mid: Tìm tiếp ở nửa Trái.\n  - Nếu Target > Mid: Tìm tiếp ở nửa Phải.\n- **Đặc điểm:** Cực kỳ nhanh. Với mảng 1 tỷ phần tử, chỉ mất tối đa ~30 lần chia đôi (log2 của 1 tỷ).",
+  "TimeComplexity": "Linear Search: O(n) | Binary Search: O(log n)",
+  "SpaceComplexity": "Linear Search: O(1) | Binary Search: O(1) (vòng lặp) hoặc O(log n) (đệ quy)",
+  "CodeExamples": "```csharp\n// Binary Search (Vòng lặp)\npublic int BinarySearch(int[] arr, int target) {\n    int left = 0;\n    int right = arr.Length - 1;\n    \n    while (left <= right) {\n        int mid = left + (right - left) / 2; // Tránh tràn số\n        \n        if (arr[mid] == target) return mid;\n        if (arr[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return -1; // Không tìm thấy\n}\n```",
+  "RealWorldExamples": "Tra từ điển (bạn lật trang giữa, nếu từ cần tìm nhỏ hơn thì tìm nửa đầu), Tìm kiếm trong Database Index.",
+  "Prerequisites": "Arrays, Sorting"
+}

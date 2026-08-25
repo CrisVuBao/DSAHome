@@ -1,0 +1,14 @@
+{
+  "Id": 13,
+  "Name": "Hai con trỏ & Cửa sổ trượt",
+  "Description": "Các kỹ thuật O(n) huyền thoại giúp giải quyết các bài toán về mảng con (subarray) hoặc chuỗi con (substring) cực kỳ thanh lịch.",
+  "Order": 13,
+  "Category": 1,
+  "Difficulty": 1,
+  "Theory": "## Hai kỹ thuật tối ưu mảng đỉnh cao\n\n### 1. Hai con trỏ (Two Pointers)\nThay vì dùng hai vòng lặp lồng nhau (O(n^2)), ta dùng 2 biến (con trỏ) duyệt qua mảng cùng một lúc. Thường dùng khi **Mảng đã sắp xếp** hoặc khi cần tìm 1 cặp phần tử.\n- **Opposite-directional (Hướng vào nhau):** Một trỏ ở đầu (left), một trỏ ở cuối (right). Đi dần vào giữa. (Ví dụ: Đảo ngược chuỗi, Tìm cặp có tổng bằng K).\n- **Equi-directional (Cùng hướng):** Hai trỏ đi cùng một chiều, một nhanh một chậm (Fast & Slow Pointers). (Ví dụ: Phát hiện chu trình trong Linked List).\n\n### 2. Cửa sổ trượt (Sliding Window)\nLà kỹ thuật chuyên dùng cho các bài toán tìm **Mảng con (Subarray)** hoặc **Chuỗi con (Substring)** có kích thước liên tiếp nhau.\n- Thay vì tính lại từ đầu tổng của 3 phần tử tiếp theo, ta chỉ cần trừ đi phần tử bị tuột lại phía sau cửa sổ, và cộng thêm phần tử mới chạy vào cửa sổ.\n- Biến bài toán từ O(n*k) xuống còn O(n).\n- Có 2 loại: **Fixed Window** (Kích thước cửa sổ cố định bằng K) và **Dynamic Window** (Cửa sổ co giãn dựa trên điều kiện).",
+  "TimeComplexity": "Giảm độ phức tạp thời gian từ O(n^2) xuống còn O(n).",
+  "SpaceComplexity": "O(1) - Chỉ cần khởi tạo vài biến đếm/con trỏ.",
+  "CodeExamples": "```csharp\n// Sliding Window - Fixed Size\n// Tìm tổng lớn nhất của mảng con có kích thước K\npublic int MaxSumSubarray(int[] arr, int k) {\n    int maxSum = 0, currentSum = 0;\n    \n    // Khởi tạo cửa sổ đầu tiên\n    for(int i = 0; i < k; i++) currentSum += arr[i];\n    maxSum = currentSum;\n    \n    // Trượt cửa sổ sang phải\n    for(int i = k; i < arr.Length; i++) {\n        // Cộng thêm phần tử mới ở trước, trừ đi phần tử bị bỏ lại ở sau\n        currentSum = currentSum + arr[i] - arr[i - k];\n        maxSum = Math.Max(maxSum, currentSum);\n    }\n    return maxSum;\n}\n```",
+  "RealWorldExamples": "Tính điểm trung bình động (Moving Average) trong tài chính chứng khoán, Kiểm soát giới hạn Traffic mạng (Rate Limiting).",
+  "Prerequisites": "Arrays"
+}

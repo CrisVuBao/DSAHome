@@ -1,0 +1,14 @@
+{
+  "Id": 12,
+  "Name": "Thao tác Bit (Bit Manipulation)",
+  "Description": "Lập trình ở mức thấp nhất: AND, OR, XOR và các phép dịch bit để tối ưu hóa không gian và tốc độ đến mức tận cùng.",
+  "Order": 12,
+  "Category": 2,
+  "Difficulty": 2,
+  "Theory": "## Thao tác Bit (Bitwise Operations)\n\nMọi dữ liệu máy tính đều lưu dưới dạng mã nhị phân (0 và 1). Thay vì dùng vòng lặp hay cấu trúc dữ liệu tốn kém, ta có thể áp dụng các phép toán trực tiếp lên các bit này để đạt tốc độ xử lý nhanh nhất.\n\n### Các phép toán cơ bản\n- **AND (`&`):** Cả 2 bit đều là 1 thì ra 1, ngược lại ra 0. Thường dùng để lấy phần dư, kiểm tra số chẵn lẻ.\n- **OR (`|`):** Chỉ cần 1 bit là 1 thì ra 1. Thường dùng để bật (set) một bit lên 1.\n- **XOR (`^`):** Khác nhau thì ra 1, giống nhau thì ra 0. Rất hữu ích vì `A ^ A = 0` và `A ^ 0 = A`.\n- **NOT (`~`):** Đảo bit, 0 thành 1 và ngược lại.\n- **Shift Left (`<<`):** Dịch toàn bộ bit sang trái. Tương đương nhân với 2.\n- **Shift Right (`>>`):** Dịch toàn bộ bit sang phải. Tương đương chia lấy nguyên cho 2.\n\n### Những trick kinh điển\n- `x & 1 == 0` : Kiểm tra x là số chẵn cực nhanh.\n- `x & (x - 1)` : Xóa bit 1 thấp nhất (Rightmost set bit) của số đó. Tuyệt chiêu đếm số lượng bit 1.\n- `a ^ b ^ a = b` : Tìm số bị lẻ trong mảng.",
+  "TimeComplexity": "Hầu như tất cả các phép toán Bit đều chạy trong O(1).",
+  "SpaceComplexity": "O(1) - Không cần dùng thêm bất kỳ cấu trúc dữ liệu ngoài nào.",
+  "CodeExamples": "```csharp\n// Đảo ngược 2 biến không cần biến tạm (Dùng XOR)\nint a = 5, b = 9;\na = a ^ b;\nb = a ^ b; // b bây giờ là 5\na = a ^ b; // a bây giờ là 9\n\n// Kiểm tra x có phải là lũy thừa của 2 không?\n// Lũy thừa của 2 chỉ có đúng duy nhất 1 bit 1\nbool isPowerOfTwo = (x > 0) && ((x & (x - 1)) == 0);\n```",
+  "RealWorldExamples": "Mã hóa hình ảnh (Watermark), Phân quyền hệ thống Linux (chmod 777), Nén dữ liệu, Networking (Subnet Mask).",
+  "Prerequisites": "Kiến thức về Hệ nhị phân"
+}

@@ -1,0 +1,14 @@
+{
+  "Id": 11,
+  "Name": "Cây Tiền Tố (Trie)",
+  "Description": "Cấu trúc dữ liệu Tree đặc biệt được thiết kế để tìm kiếm chuỗi (String) cực nhanh, trái tim của tính năng Autocomplete.",
+  "Order": 11,
+  "Category": 0,
+  "Difficulty": 2,
+  "Theory": "## Cây Tiền Tố (Trie - Đọc là \"Try\")\n\nTrie (còn gọi là Prefix Tree) là một dạng Cây (Tree) đặc biệt chuyên dùng để lưu trữ và tìm kiếm các tập hợp **Chuỗi (Strings)**. Từ \"Trie\" bắt nguồn từ chữ re**trie**val (truy xuất).\n\n### Đặc điểm cấu trúc\n- Khác với BST, Node trong Trie **không lưu trữ chữ cái**. Thay vào đó, chữ cái được đại diện bởi **Cạnh (Edge)** nối giữa các Node.\n- Cây Trie có tính chất **tiền tố chung (Prefix)**: Tất cả những từ bắt đầu bằng chữ \"A\" sẽ nằm chung trong nhánh \"A\" mọc ra từ Root. Những từ bắt đầu bằng \"AP\" sẽ chung nhánh \"A\" -> \"P\".\n- Mỗi Node thường có một biến boolean `isEndOfWord` để đánh dấu tại Node đó đã ghép thành một từ hoàn chỉnh hay chưa.\n\n### Ưu điểm vượt trội\nNếu dùng Hash Table để tìm kiếm một chuỗi, tuy O(1) nhưng bạn bị phụ thuộc vào độ dài chuỗi khi băm, và Hash Table **không thể tìm tiền tố** (ví dụ: tìm tất cả các chữ bắt đầu bằng \"cat\").\n\nTrie cho phép Tìm kiếm nguyên từ, hoặc Tìm theo Tiền tố (Prefix Match) chỉ với chi phí bằng đúng **độ dài của chuỗi cần tìm**, O(L).\n\n### Nhược điểm\n- **Cực kỳ tốn bộ nhớ.** Mỗi Node có thể chứa tới 26 con trỏ (tương ứng 26 chữ cái alphabet) dù cho hầu hết chúng bị Null.",
+  "TimeComplexity": "Tìm kiếm/Thêm/Xóa: O(L) với L là độ dài của chuỗi cần xử lý. Rất nhanh, không phụ thuộc số lượng từ đang có.",
+  "SpaceComplexity": "O(N * L * Alphabet_Size) - Tốn rất nhiều không gian.",
+  "CodeExamples": "```csharp\npublic class TrieNode {\n    // Bảng băm để lưu con trỏ (giúp tiết kiệm bộ nhớ hơn so với mảng 26)\n    public Dictionary<char, TrieNode> Children = new Dictionary<char, TrieNode>();\n    public bool IsEndOfWord = false;\n}\n\n// Ví dụ thao tác Insert chuỗi \"CAT\"\n// Root -> C -> A -> T (đánh dấu IsEndOfWord tại T)\n```",
+  "RealWorldExamples": "Tính năng gợi ý từ khóa khi gõ (Autocomplete) trên Google, Kiểm tra chính tả (Spell Checker), Danh bạ điện thoại.",
+  "Prerequisites": "Trees, Strings"
+}

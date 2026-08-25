@@ -1,0 +1,26 @@
+[
+  {
+    "TopicId": 12,
+    "Content": "Biểu thức `XOR` (Phép loại trừ) của một số với chính nó (Ví dụ: `a ^ a`) sẽ ra kết quả là gì?",
+    "QuestionType": 0,
+    "Options": "[\"Bằng chính nó (a)\", \"Bằng 0\", \"Bằng 1\", \"Gây ra lỗi biên dịch\"]",
+    "CorrectAnswer": "Bằng 0",
+    "Explanation": "Phép XOR so sánh từng bit, nếu 2 bit giống nhau thì ra 0, khác nhau ra 1. Khi XOR với chính nó, tất cả các bit giống nhau y đúc nên đều ra 0."
+  },
+  {
+    "TopicId": 12,
+    "Content": "Nếu muốn kiểm tra nhanh một số `x` là chẵn hay lẻ bằng Thao tác Bit, ta dùng biểu thức nào?",
+    "QuestionType": 0,
+    "Options": "[\"x ^ 1 == 0\", \"x | 1 == 1\", \"x & 1 == 0\", \"x << 1 == 0\"]",
+    "CorrectAnswer": "x & 1 == 0",
+    "Explanation": "Với hệ nhị phân, bit cuối cùng luôn quyết định tính chẵn lẻ (bit 0 thì chẵn, bit 1 thì lẻ). Phép `& 1` sẽ giữ lại bit cuối cùng. Nếu ra 0 thì x là chẵn."
+  },
+  {
+    "TopicId": 12,
+    "Content": "Phép dịch trái bit `x << 1` tương đương với phép toán học nào?",
+    "QuestionType": 0,
+    "Options": "[\"x chia 2\", \"x nhân 2\", \"x cộng 1\", \"x bình phương\"]",
+    "CorrectAnswer": "x nhân 2",
+    "Explanation": "Giống như hệ thập phân khi thêm số 0 vào đuôi là nhân 10, trong hệ nhị phân khi dịch sang trái thêm số 0 vào đuôi, giá trị sẽ được nhân 2."
+  }
+]

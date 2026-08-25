@@ -1,0 +1,12 @@
+[
+  {
+    "TopicId": 10,
+    "Front": "Đặc trưng lớn nhất của Thuật toán Tham lam (Greedy)?",
+    "Back": "Luôn đưa ra quyết định tốt nhất / tối ưu nhất tại THỜI ĐIỂM HIỆN TẠI (Tối ưu cục bộ), và không bao giờ quay lui (No backtracking)."
+  },
+  {
+    "TopicId": 10,
+    "Front": "Tham lam thường được kết hợp với thuật toán cơ bản nào để tăng tốc?",
+    "Back": "Sắp xếp (Sorting). Người ta thường sắp xếp lại dữ liệu (vd: ưu tiên phần tử lớn nhất/nhỏ nhất lên đầu) trước khi chạy vòng lặp Tham lam."
+  }
+]

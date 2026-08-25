@@ -1,0 +1,12 @@
+[
+  {
+    "TopicId": 11,
+    "Front": "Ứng dụng nổi bật nhất của Trie trong thực tế?",
+    "Back": "Gợi ý tự động (Autocomplete), Tìm kiếm tiền tố (Prefix Search), Kiểm tra chính tả."
+  },
+  {
+    "TopicId": 11,
+    "Front": "Trong Trie, Node đại diện cho chữ cái hay Cạnh đại diện cho chữ cái?",
+    "Back": "Cạnh (Edge) hoặc chỉ số của mảng con trỏ đại diện cho chữ cái, chứ bản thân Node không lưu chữ cái, Node thường chỉ lưu cờ hiệu IsEndOfWord."
+  }
+]

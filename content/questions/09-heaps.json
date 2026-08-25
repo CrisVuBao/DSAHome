@@ -1,0 +1,26 @@
+[
+  {
+    "TopicId": 9,
+    "Content": "Trong Max Heap, phần tử lớn nhất luôn nằm ở vị trí nào?",
+    "QuestionType": 0,
+    "Options": "[\"Nằm ở Node lá (dưới cùng)\", \"Nằm ở Root (đỉnh cây)\", \"Nằm ngẫu nhiên tùy thứ tự chèn\", \"Nằm ở Node con bên phải\"]",
+    "CorrectAnswer": "Nằm ở Root (đỉnh cây)",
+    "Explanation": "Max Heap quy định cha phải lớn hơn con, nên phần tử lớn nhất sẽ dần bị đẩy lên đỉnh cao nhất của cây."
+  },
+  {
+    "TopicId": 9,
+    "Content": "Độ phức tạp khi Thêm (Insert) một phần tử vào Heap là bao nhiêu?",
+    "QuestionType": 0,
+    "Options": "[\"O(1)\", \"O(log n)\", \"O(n)\", \"O(n log n)\"]",
+    "CorrectAnswer": "O(log n)",
+    "Explanation": "Khi thêm, ta phải thao tác Bubble Up (đẩy phần tử lên nếu lớn hơn cha). Quá trình này đi qua chiều cao của cây, tức là O(log n)."
+  },
+  {
+    "TopicId": 9,
+    "Content": "Cấu trúc dữ liệu nào thường được sử dụng để lập trình Heap một cách tối ưu bộ nhớ nhất?",
+    "QuestionType": 0,
+    "Options": "[\"Mảng (Array)\", \"Danh sách liên kết (Linked List)\", \"Bảng băm (Hash Table)\", \"Đồ thị (Graph)\"]",
+    "CorrectAnswer": "Mảng (Array)",
+    "Explanation": "Vì Heap là một cây nhị phân hoàn chỉnh, ta có thể trải phẳng nó ra Mảng bằng toán học (con trái 2*i + 1, con phải 2*i + 2) mà không tốn bộ nhớ lưu con trỏ."
+  }
+]

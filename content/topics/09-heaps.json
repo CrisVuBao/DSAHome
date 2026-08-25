@@ -1,0 +1,14 @@
+{
+  "Id": 9,
+  "Name": "Cấu trúc dữ liệu Đống (Heaps)",
+  "Description": "Khám phá Min Heap, Max Heap và ứng dụng vào Priority Queue để lấy phần tử lớn/nhỏ nhất trong O(1).",
+  "Order": 9,
+  "Category": 0,
+  "Difficulty": 1,
+  "Theory": "## Đống (Heap)\n\nHeap là một dạng đặc biệt của Cây Nhị Phân Hoàn Chỉnh (Complete Binary Tree), thường được cài đặt ẩn dưới dạng một Mảng (Array).\n\n### Phân loại\n- **Max Heap:** Giá trị của Node cha luôn **lớn hơn hoặc bằng** giá trị các Node con. (Gốc luôn là Max).\n- **Min Heap:** Giá trị của Node cha luôn **nhỏ hơn hoặc bằng** giá trị các Node con. (Gốc luôn là Min).\n\n### Priority Queue (Hàng đợi ưu tiên)\nTrong Queue bình thường, vào trước ra trước (FIFO). Trong Priority Queue (được cài đặt bằng Heap), phần tử có **Độ ưu tiên cao nhất** (Min hoặc Max) sẽ được lấy ra trước, bất kể lúc nó đi vào.\n\n### Cơ chế mảng của Heap\nMột cây hoàn chỉnh có thể dải phẳng thành mảng mà không lãng phí bộ nhớ:\n- Chỉ số của node hiện tại: `i`\n- Con trái: `2*i + 1`\n- Con phải: `2*i + 2`\n- Cha: `(i - 1) / 2`\n\n### Các thao tác (Heapify)\n- **Thêm (Insert):** Thêm vào cuối mảng, sau đó đẩy ngược lên trên (Swim/Bubble Up) để khôi phục tính chất Heap. Tốn `O(log n)`.\n- **Lấy Max/Min (Extract):** Lấy phần tử Root ra, đưa phần tử cuối cùng lên Root, sau đó đẩy chìm xuống (Sink/Bubble Down). Tốn `O(log n)`.",
+  "TimeComplexity": "Lấy Max/Min: O(1) | Thêm/Xóa: O(log n) | Build Heap: O(n)",
+  "SpaceComplexity": "O(n) để lưu trữ cây trong mảng.",
+  "CodeExamples": "```csharp\n// Trong .NET 6+, PriorityQueue đã được hỗ trợ sẵn\nPriorityQueue<string, int> pq = new PriorityQueue<string, int>();\n\n// Thêm vào PQ kèm độ ưu tiên (số nhỏ ưu tiên cao -> Min Heap)\npq.Enqueue(\"Bệnh nhân ho nhẹ\", 3);\npq.Enqueue(\"Bệnh nhân cấp cứu\", 1);\npq.Enqueue(\"Bệnh nhân gãy tay\", 2);\n\n// Lấy ra\nwhile(pq.Count > 0) {\n    Console.WriteLine(pq.Dequeue());\n    // Kết quả: Cấp cứu -> Gãy tay -> Ho nhẹ\n}\n```",
+  "RealWorldExamples": "Hệ thống cấp cứu bệnh viện, Lập lịch CPU của Hệ điều hành, Thuật toán tìm đường ngắn nhất Dijkstra.",
+  "Prerequisites": "Arrays, Trees"
+}

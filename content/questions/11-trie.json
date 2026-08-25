@@ -1,0 +1,26 @@
+[
+  {
+    "TopicId": 11,
+    "Content": "Nhược điểm lớn nhất của cấu trúc dữ liệu Trie là gì?",
+    "QuestionType": 0,
+    "Options": "[\"Tốc độ tìm kiếm quá chậm\", \"Chỉ lưu được số, không lưu được chữ\", \"Tiêu tốn quá nhiều bộ nhớ (Memory)\", \"Không thể kiểm tra tiền tố\"]",
+    "CorrectAnswer": "Tiêu tốn quá nhiều bộ nhớ (Memory)",
+    "Explanation": "Vì mỗi Node trong Trie phải chuẩn bị sẵn mảng (thường là 26 vị trí cho a-z) con trỏ, dù nhánh đó không dùng hết, dẫn tới hao phí dung lượng rất lớn."
+  },
+  {
+    "TopicId": 11,
+    "Content": "Độ phức tạp để tìm một từ có độ dài L trong cây Trie (đang chứa hàng triệu từ) là bao nhiêu?",
+    "QuestionType": 0,
+    "Options": "[\"O(1)\", \"O(L)\", \"O(log n)\", \"O(n)\"]",
+    "CorrectAnswer": "O(L)",
+    "Explanation": "Tuyệt vời nhất ở Trie là thời gian tìm kiếm không phụ thuộc vào hàng triệu từ có trong cây, mà chỉ phụ thuộc vào chính độ dài L của từ bạn đang tìm. Bạn lội xuống đúng L bước là xong."
+  },
+  {
+    "TopicId": 11,
+    "Content": "Nếu có 3 từ \"CAR\", \"CAT\", \"CARD\" thêm vào Trie. Có bao nhiêu Node con trỏ đi ra từ chữ 'C'?",
+    "QuestionType": 0,
+    "Options": "[\"1 Node (đi tới chữ 'A')\", \"2 Node\", \"3 Node\", \"4 Node\"]",
+    "CorrectAnswer": "1 Node (đi tới chữ 'A')",
+    "Explanation": "Vì cả 3 từ đều có tiền tố chung là 'CA', từ Root sẽ đi đến chữ 'C', và từ chữ 'C' chỉ mọc ra đúng 1 nhánh tới 'A', rồi từ 'A' mới chẻ ra nhánh 'R' và nhánh 'T'."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "TopicId": 8,
+    "Content": "Điều kiện BẮT BUỘC để có thể áp dụng thuật toán Tìm kiếm nhị phân (Binary Search) là gì?",
+    "QuestionType": 0,
+    "Options": "[\"Mảng phải có số lượng phần tử là số chẵn\", \"Mảng không được có phần tử trùng lặp\", \"Mảng phải được sắp xếp từ trước\", \"Mảng chỉ chứa số nguyên dương\"]",
+    "CorrectAnswer": "Mảng phải được sắp xếp từ trước",
+    "Explanation": "Binary Search dựa trên tính chất phần tử bên trái nhỏ hơn và bên phải lớn hơn để loại bỏ một nửa mảng. Nếu mảng chưa sắp xếp, tính chất này bị phá vỡ."
+  },
+  {
+    "TopicId": 8,
+    "Content": "Trong Binary Search, tại sao người ta thường dùng công thức `mid = left + (right - left) / 2` thay vì `mid = (left + right) / 2`?",
+    "QuestionType": 0,
+    "Options": "[\"Vì nó chạy nhanh hơn\", \"Để tránh lỗi tràn bộ nhớ (Integer Overflow) khi left và right quá lớn\", \"Để mã nguồn dễ đọc hơn\", \"Vì C# không hỗ trợ phép chia trung bình\"]",
+    "CorrectAnswer": "Để tránh lỗi tràn bộ nhớ (Integer Overflow) khi left và right quá lớn",
+    "Explanation": "Nếu mảng cực lớn (ví dụ gần giới hạn của Int32), `left + right` có thể vượt mức 2 tỷ và bị tràn số âm. Dùng phép trừ rồi cộng thêm sẽ luôn an toàn."
+  },
+  {
+    "TopicId": 8,
+    "Content": "Nếu mảng có 1,048,576 phần tử (2^20), thuật toán Linear Search sẽ mất tối đa bao nhiêu bước, và Binary Search mất tối đa bao nhiêu bước?",
+    "QuestionType": 0,
+    "Options": "[\"Cả hai mất 20 bước\", \"Linear: 1048576 bước | Binary: 20 bước\", \"Linear: 1048576 bước | Binary: 1 bước\", \"Linear: 20 bước | Binary: 1048576 bước\"]",
+    "CorrectAnswer": "Linear: 1048576 bước | Binary: 20 bước",
+    "Explanation": "Linear Search duyệt từng phần tử (O(n)), còn Binary Search chia đôi mảng nên chỉ tốn log2(2^20) = 20 bước."
+  }
+]

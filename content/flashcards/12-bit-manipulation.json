@@ -1,0 +1,12 @@
+[
+  {
+    "TopicId": 12,
+    "Front": "Tính chất kỳ diệu nhất của phép toán XOR (`^`) để tìm số bị thiếu?",
+    "Back": "`A ^ A = 0` và `A ^ 0 = A`. Do đó nếu lấy 1 mảng gồm các số ghép cặp, có 1 số bị lẻ, ta chỉ cần XOR tất cả mảng, kết quả cuối cùng chính là số lẻ loi đó."
+  },
+  {
+    "TopicId": 12,
+    "Front": "Phép toán `x & (x - 1)` dùng để làm gì?",
+    "Back": "Nó sẽ biến bit `1` nằm ở tận cùng bên phải của số `x` thành bit `0`. Rất hữu dụng để đếm số lượng bit 1 trong một số."
+  }
+]

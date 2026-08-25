@@ -1,0 +1,12 @@
+[
+  {
+    "TopicId": 9,
+    "Front": "Trong mảng cài đặt Heap, nếu Node cha ở index `i`, con trái và con phải nằm ở đâu?",
+    "Back": "Con trái: `2*i + 1`. Con phải: `2*i + 2`."
+  },
+  {
+    "TopicId": 9,
+    "Front": "Sự khác biệt giữa Queue và Priority Queue?",
+    "Back": "Queue lấy ra theo thứ tự thời gian (FIFO). Priority Queue lấy ra phần tử có Độ ưu tiên lớn/nhỏ nhất trước (Max/Min)."
+  }
+]
