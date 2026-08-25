@@ -1,0 +1,34 @@
+[
+  {
+    "TopicId": 4,
+    "Content": "Độ phức tạp thời gian trung bình của Quick Sort là bao nhiêu?",
+    "QuestionType": 0,
+    "Options": "[\"O(n)\", \"O(n^2)\", \"O(n log n)\", \"O(log n)\"]",
+    "CorrectAnswer": "O(n log n)",
+    "Explanation": "Trung bình Quick Sort phân hoạch mảng ra làm 2 nửa tương đương nhau, do đó cần log(n) bước phân hoạch, mỗi bước mất O(n) để duyệt."
+  },
+  {
+    "TopicId": 4,
+    "Content": "Thuật toán sắp xếp nào dưới đây sử dụng thêm O(n) bộ nhớ phụ (Không In-place)?",
+    "QuestionType": 0,
+    "Options": "[\"Bubble Sort\", \"Quick Sort\", \"Insertion Sort\", \"Merge Sort\"]",
+    "CorrectAnswer": "Merge Sort",
+    "Explanation": "Merge Sort cần một mảng phụ để lưu trữ tạm thời các phần tử trong bước Merge."
+  },
+  {
+    "TopicId": 4,
+    "Content": "Trường hợp tồi tệ nhất (Worst-case) của Quick Sort xảy ra khi nào?",
+    "QuestionType": 0,
+    "Options": "[\"Khi mảng có nhiều phần tử trùng lặp\", \"Khi mảng đã được sắp xếp sẵn (tăng/giảm) và chọn Pivot là phần tử đầu/cuối\", \"Khi mảng hoàn toàn ngẫu nhiên\", \"Quick Sort không có Worst-case\"]",
+    "CorrectAnswer": "Khi mảng đã được sắp xếp sẵn (tăng/giảm) và chọn Pivot là phần tử đầu/cuối",
+    "Explanation": "Lúc này Pivot không chia mảng làm 2 nửa mà chỉ tách được 1 phần tử, làm đệ quy lồng nhau n lần, dẫn đến O(n²)."
+  },
+  {
+    "TopicId": 4,
+    "Content": "Thuật toán nào được mệnh danh là thuật toán sắp xếp hoạt động theo cơ chế Chia để Trị (Divide and Conquer)?",
+    "QuestionType": 0,
+    "Options": "[\"Chỉ Quick Sort\", \"Chỉ Merge Sort\", \"Cả Quick Sort và Merge Sort\", \"Bubble Sort\"]",
+    "CorrectAnswer": "Cả Quick Sort và Merge Sort",
+    "Explanation": "Cả 2 đều chia mảng bài toán lớn thành các phần nhỏ hơn, giải quyết độc lập rồi gộp kết quả lại."
+  }
+]

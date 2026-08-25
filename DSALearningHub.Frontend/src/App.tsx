@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Learn from './pages/Learn';
+import TopicDetail from './pages/TopicDetail';
 import Visualizer from './pages/Visualizer';
 import Playground from './pages/Playground';
 
@@ -14,6 +15,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/learn" element={<Learn />} />
+        <Route path="/learn/:id" element={<TopicDetail />} />
         <Route path="/visualizer" element={<Visualizer />} />
         <Route path="/playground" element={<Playground />} />
       </Routes>

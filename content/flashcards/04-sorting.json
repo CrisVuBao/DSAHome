@@ -1,0 +1,17 @@
+[
+  {
+    "TopicId": 4,
+    "Front": "Định nghĩa thuật toán In-place trong Sắp xếp?",
+    "Back": "Là thuật toán không cần cấp phát thêm bộ nhớ phụ thuộc vào kích thước đầu vào (không gian O(1)). Ví dụ: Quick Sort, Bubble Sort."
+  },
+  {
+    "TopicId": 4,
+    "Front": "Sắp xếp ổn định (Stable Sort) là gì?",
+    "Back": "Là thuật toán giữ nguyên thứ tự tương đối của các phần tử có giá trị BẰNG NHAU. Ví dụ: Merge Sort là Stable, Quick Sort là Unstable."
+  },
+  {
+    "TopicId": 4,
+    "Front": "Tại sao trong thực tế Quick Sort (O(n log n)) lại nhanh hơn Merge Sort (O(n log n))?",
+    "Back": "Vì hằng số ẩn (Hidden Constant) của Quick Sort nhỏ hơn, hoạt động tốt hơn với CPU Cache do tính chất truy cập bộ nhớ liền kề (In-place)."
+  }
+]

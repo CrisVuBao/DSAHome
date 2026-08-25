@@ -1,0 +1,34 @@
+[
+  {
+    "TopicId": 2,
+    "Content": "Độ phức tạp thời gian để chèn một phần tử vào đầu danh sách liên kết đơn là bao nhiêu?",
+    "QuestionType": 0,
+    "Options": "[\"O(1)\", \"O(n)\", \"O(log n)\", \"O(n^2)\"]",
+    "CorrectAnswer": "O(1)",
+    "Explanation": "Để chèn vào đầu, bạn chỉ cần tạo Node mới, trỏ Next của nó vào Head hiện tại, rồi cập nhật Head bằng Node mới. Thao tác này mất thời gian không đổi O(1)."
+  },
+  {
+    "TopicId": 2,
+    "Content": "Nhược điểm chính của danh sách liên kết so với mảng là gì?",
+    "QuestionType": 0,
+    "Options": "[\"Kích thước cố định\", \"Tốn nhiều thời gian để chèn/xóa\", \"Không thể truy cập ngẫu nhiên (O(n))\", \"Chỉ lưu được số nguyên\"]",
+    "CorrectAnswer": "Không thể truy cập ngẫu nhiên (O(n))",
+    "Explanation": "Mảng cho phép truy cập ngẫu nhiên O(1) qua chỉ số index, còn danh sách liên kết bắt buộc phải duyệt từ Head tới Node cần tìm mất O(n)."
+  },
+  {
+    "TopicId": 2,
+    "Content": "Một danh sách liên kết đôi (Doubly Linked List) khác gì so với đơn (Singly)?",
+    "QuestionType": 0,
+    "Options": "[\"Chứa 2 giá trị Data\", \"Có thêm con trỏ trỏ về Node trước đó (Prev)\", \"Không có con trỏ Head\", \"Lưu trữ bộ nhớ liền kề\"]",
+    "CorrectAnswer": "Có thêm con trỏ trỏ về Node trước đó (Prev)",
+    "Explanation": "Doubly Linked List mỗi Node có 2 con trỏ: Next trỏ tới Node tiếp theo và Prev trỏ về Node phía trước, giúp duyệt ngược danh sách dễ dàng."
+  },
+  {
+    "TopicId": 2,
+    "Content": "Nếu bạn mất con trỏ Head của một danh sách liên kết, điều gì sẽ xảy ra?",
+    "QuestionType": 0,
+    "Options": "[\"Vẫn có thể truy cập qua index\", \"Danh sách tự động phục hồi\", \"Gây rò rỉ bộ nhớ (Memory Leak) và mất hoàn toàn danh sách\", \"Hệ thống sẽ crash lập tức\"]",
+    "CorrectAnswer": "Gây rò rỉ bộ nhớ (Memory Leak) và mất hoàn toàn danh sách",
+    "Explanation": "Không có con trỏ Head, bạn không có cách nào truy cập vào Node đầu tiên, do đó toàn bộ danh sách sẽ không thể truy cập được và bị Garbage Collector thu hồi."
+  }
+]

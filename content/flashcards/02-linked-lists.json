@@ -1,0 +1,22 @@
+[
+  {
+    "TopicId": 2,
+    "Front": "Độ phức tạp khi truy cập phần tử thứ i trong Linked List?",
+    "Back": "O(n). Bạn phải duyệt tuần tự từ phần tử Head."
+  },
+  {
+    "TopicId": 2,
+    "Front": "Head Node là gì?",
+    "Back": "Là con trỏ trỏ đến Node đầu tiên của danh sách liên kết. Nếu Head = null, danh sách rỗng."
+  },
+  {
+    "TopicId": 2,
+    "Front": "Tail Node là gì?",
+    "Back": "Là Node cuối cùng của danh sách. Trong Singly Linked List, con trỏ Next của Tail luôn bằng null."
+  },
+  {
+    "TopicId": 2,
+    "Front": "Làm thế nào để phát hiện chu trình (Cycle) trong Linked List?",
+    "Back": "Dùng thuật toán Thỏ và Rùa (Floyd's Cycle-Finding). Dùng 2 con trỏ, slow nhảy 1 bước, fast nhảy 2 bước. Nếu chúng gặp nhau -> Có chu trình."
+  }
+]

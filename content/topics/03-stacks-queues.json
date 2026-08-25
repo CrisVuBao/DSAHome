@@ -1,0 +1,14 @@
+{
+  "Id": 3,
+  "Name": "Ngăn xếp & Hàng đợi (Stacks & Queues)",
+  "Description": "Các cấu trúc dữ liệu tuyến tính với luật truy cập đặc biệt: LIFO (Stack) và FIFO (Queue).",
+  "Order": 3,
+  "Category": 0,
+  "Difficulty": 0,
+  "Theory": "## 1. Stack (Ngăn xếp)\nStack hoạt động theo nguyên tắc **LIFO (Last In First Out)** - Vào sau ra trước. Hãy tưởng tượng một chồng đĩa, bạn chỉ có thể lấy đĩa trên cùng và đặt đĩa mới lên trên cùng.\n\n### Các thao tác cơ bản của Stack:\n- **Push**: Thêm phần tử vào đỉnh Stack (`O(1)`).\n- **Pop**: Lấy phần tử khỏi đỉnh Stack (`O(1)`).\n- **Peek/Top**: Xem phần tử ở đỉnh mà không xóa (`O(1)`).\n\n## 2. Queue (Hàng đợi)\nQueue hoạt động theo nguyên tắc **FIFO (First In First Out)** - Vào trước ra trước. Tương tự như xếp hàng mua vé, người đến trước sẽ được phục vụ trước.\n\n### Các thao tác cơ bản của Queue:\n- **Enqueue**: Thêm phần tử vào cuối hàng đợi (`O(1)`).\n- **Dequeue**: Lấy phần tử khỏi đầu hàng đợi (`O(1)`).\n- **Peek/Front**: Xem phần tử ở đầu hàng (`O(1)`).",
+  "TimeComplexity": "Push/Pop/Enqueue/Dequeue: O(1) | Tìm kiếm: O(n)",
+  "SpaceComplexity": "O(n)",
+  "CodeExamples": "```csharp\n// Stack C#\nStack<int> stack = new Stack<int>();\nstack.Push(1);\nstack.Push(2);\nint top = stack.Pop(); // trả về 2\n\n// Queue C#\nQueue<string> queue = new Queue<string>();\nqueue.Enqueue(\"A\");\nqueue.Enqueue(\"B\");\nstring first = queue.Dequeue(); // trả về \"A\"\n```",
+  "RealWorldExamples": "Stack: Undo/Redo, Trình duyệt Back/Forward. Queue: Xếp hàng mua vé, Hàng đợi máy in, Lập lịch CPU.",
+  "Prerequisites": "Arrays, Linked Lists"
+}

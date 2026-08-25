@@ -1,0 +1,14 @@
+{
+  "Id": 2,
+  "Name": "Danh sách liên kết (Linked Lists)",
+  "Description": "Cấu trúc dữ liệu dạng chuỗi các node, mỗi node trỏ đến node tiếp theo. Khắc phục nhược điểm về kích thước cố định của Mảng.",
+  "Order": 2,
+  "Category": 0,
+  "Difficulty": 1,
+  "Theory": "## Danh Sách Liên Kết (Linked List) là gì?\n\nDanh sách liên kết là một cấu trúc dữ liệu tuyến tính, trong đó các phần tử (được gọi là Node) không được lưu trữ ở các vị trí bộ nhớ liền kề. Thay vào đó, mỗi Node trỏ đến Node tiếp theo.\n\n### Cấu trúc của một Node\nMột Node cơ bản trong Singly Linked List (Danh sách liên kết đơn) gồm 2 phần:\n1. **Data:** Dữ liệu thực tế.\n2. **Next Pointer:** Con trỏ lưu địa chỉ của Node tiếp theo.\n\n### Ưu điểm so với Mảng\n- **Kích thước động:** Có thể dễ dàng thêm/xóa phần tử mà không cần cấp phát lại bộ nhớ.\n- **Thêm/Xóa phần tử nhanh:** `O(1)` nếu đã biết vị trí con trỏ (thêm vào đầu hoặc thêm sau một node đã biết).\n\n### Nhược điểm\n- **Truy cập ngẫu nhiên chậm:** `O(n)` do phải duyệt từ đầu (Head) đến phần tử cần tìm.\n- **Tốn thêm bộ nhớ:** Cho con trỏ `Next`.",
+  "TimeComplexity": "Truy cập: O(n) | Tìm kiếm: O(n) | Chèn/Xóa ở đầu: O(1)",
+  "SpaceComplexity": "O(n)",
+  "CodeExamples": "```csharp\npublic class Node {\n    public int Data;\n    public Node Next;\n    \n    public Node(int data) {\n        Data = data;\n        Next = null;\n    }\n}\n\n// Khởi tạo\nNode head = new Node(1);\nhead.Next = new Node(2);\nhead.Next.Next = new Node(3);\n```",
+  "RealWorldExamples": "Danh sách phát nhạc (Next/Previous bài hát), Tính năng Undo/Redo cơ bản.",
+  "Prerequisites": "Arrays"
+}

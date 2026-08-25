@@ -1,0 +1,22 @@
+[
+  {
+    "TopicId": 3,
+    "Front": "Độ phức tạp của Push và Pop trong Stack?",
+    "Back": "O(1) - Thời gian hằng số vì chỉ thao tác trên một đầu (đỉnh)."
+  },
+  {
+    "TopicId": 3,
+    "Front": "Call Stack (Ngăn xếp gọi hàm) là gì?",
+    "Back": "Là một vùng bộ nhớ dạng Stack do hệ điều hành quản lý, lưu trữ các lời gọi hàm đang thực thi (đặc biệt trong Đệ quy)."
+  },
+  {
+    "TopicId": 3,
+    "Front": "Circular Queue (Hàng đợi vòng) sinh ra để giải quyết vấn đề gì của Queue cài bằng mảng?",
+    "Back": "Giải quyết tình trạng lãng phí bộ nhớ ở đầu mảng sau khi Dequeue, bằng cách cho phép rear vòng ngược lại đầu mảng nếu còn trống."
+  },
+  {
+    "TopicId": 3,
+    "Front": "Sự khác biệt giữa Queue và Priority Queue?",
+    "Back": "Queue lấy ra theo thứ tự thời gian (FIFO). Priority Queue lấy ra phần tử có ĐỘ ƯU TIÊN cao nhất, không phụ thuộc vào lúc đưa vào."
+  }
+]

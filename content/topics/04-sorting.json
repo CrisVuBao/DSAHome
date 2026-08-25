@@ -1,0 +1,14 @@
+{
+  "Id": 4,
+  "Name": "Các thuật toán Sắp xếp (Sorting)",
+  "Description": "Khám phá các thuật toán sắp xếp phổ biến như Bubble Sort, Merge Sort, Quick Sort và so sánh hiệu suất.",
+  "Order": 4,
+  "Category": 1,
+  "Difficulty": 1,
+  "Theory": "## Các Thuật Toán Sắp Xếp (Sorting)\n\nSắp xếp là quá trình tổ chức một tập hợp dữ liệu theo một thứ tự cụ thể (tăng hoặc giảm dần). Có rất nhiều thuật toán sắp xếp với các đặc điểm hiệu năng khác nhau.\n\n### 1. Bubble Sort (Nổi bọt)\nSo sánh từng cặp phần tử liền kề và đổi chỗ nếu chúng sai thứ tự. Lặp lại quá trình cho đến khi mảng được sắp xếp.\n- **Ưu điểm:** Dễ hiểu, dễ cài đặt.\n- **Nhược điểm:** Rất chậm với dữ liệu lớn.\n\n### 2. Merge Sort (Sắp xếp trộn)\nSử dụng chiến lược **Chia để trị (Divide and Conquer)**. Chia đôi mảng liên tục cho đến khi mỗi phần chỉ có 1 phần tử, sau đó gộp (Merge) chúng lại theo thứ tự.\n- **Ưu điểm:** Hiệu năng ổn định `O(n log n)` mọi trường hợp.\n- **Nhược điểm:** Tốn thêm `O(n)` không gian bộ nhớ phụ.\n\n### 3. Quick Sort (Sắp xếp nhanh)\nCũng dùng **Chia để trị**. Chọn một phần tử làm Pivot (chốt), đưa các phần tử nhỏ hơn sang trái, lớn hơn sang phải. Sau đó đệ quy trên 2 nửa.\n- **Ưu điểm:** Cực kỳ nhanh trong thực tế, không tốn bộ nhớ phụ (In-place).\n- **Nhược điểm:** Trường hợp xấu nhất có thể rơi vào `O(n²)` nếu chọn Pivot không tốt.",
+  "TimeComplexity": "Bubble Sort: O(n²) | Merge Sort: O(n log n) | Quick Sort: O(n log n) trung bình, O(n²) xấu nhất",
+  "SpaceComplexity": "Bubble: O(1) | Merge: O(n) | Quick: O(log n)",
+  "CodeExamples": "```csharp\n// C# Array.Sort sử dụng Introspective Sort (kết hợp QuickSort, HeapSort, InsertionSort)\nint[] arr = { 5, 2, 8, 1, 9 };\nArray.Sort(arr); \n```",
+  "RealWorldExamples": "Sắp xếp danh sách sản phẩm theo giá, Xếp hạng sinh viên theo điểm.",
+  "Prerequisites": "Arrays"
+}
